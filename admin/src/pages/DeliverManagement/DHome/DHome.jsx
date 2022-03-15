@@ -1,5 +1,6 @@
 import React from 'react'
 import DChart from '../../../components/DeliverManagement/DChart/DChart';
+import DeliverList from '../../../components/DeliverManagement/DeliverList/DeliverList';
 import Topbar from '../../../components/topbar/Topbar';
 
 import './dHome.scss';
@@ -13,6 +14,8 @@ export default function DHome() {
         </div>
 
         <DChart title="Delivery Analytics" grid dataKey="New User" />
+
+        <DeliverList/>
     </div>
   )
 }
