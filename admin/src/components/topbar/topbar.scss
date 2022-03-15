@@ -1,0 +1,29 @@
+.topbar{
+    display: flex;
+    flex-direction: row;
+
+    .searchbox{
+        display: flex;
+        flex-direction: row;
+        
+        .search{
+            width: 200px;
+            height: 45px;
+            padding-left: 15px;
+            border: none;
+            background-color: rgb(228, 237, 255);
+        }
+        .serBtn{
+            height: 45px;
+            width: 45px;
+            border: none;
+            background-color: rgb(228, 237, 255);
+            cursor: pointer;
+        }
+    }
+    .profileImg{
+        width: 45px;
+        height: 45px;
+        margin-left: 10px;
+    }
+}

@@ -1,5 +1,3 @@
-import "./sidebar.css";
-
 import {
   Report,
   Store,
@@ -9,6 +7,8 @@ import {
   LocalShipping,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
+import "./sidebar.scss";
+import logo from './logo.png'; 
 
 export default function Sidebar() {
   return (
@@ -17,24 +17,29 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <ul className="sidebarList">
             <Link to="/" className="link">
+              <div className="sidebarListlogo">
+                  <img component={Link} to="/" src={logo} alt="Logo" className="logo"/>
+              </div>
+            </Link>
+            <Link to="/" className="link">
               <li className="sidebarListItem">
                 <Store className="sidebarIcon" />
                 Dashboard
               </li>
             </Link>
-            <Link to="/users" className="link">
+            <Link to="/" className="link">
               <li className="sidebarListItem">
                 <ListAlt className="sidebarIcon" />
                 Orders Management
               </li>
             </Link>
-            <Link to="/movies" className="link">
+            <Link to="/" className="link">
               <li className="sidebarListItem">
                 <LocalGroceryStore className="sidebarIcon" />
                 Products Management
               </li>
             </Link>
-            <Link to="/lists" className="link">
+            <Link to="/" className="link">
               <li className="sidebarListItem">
                 <Person className="sidebarIcon" />
                 Employee Management
@@ -46,7 +51,7 @@ export default function Sidebar() {
                 Deliver Management
               </li>
             </Link>
-            <Link to="/newList" className="link">
+            <Link to="/" className="link">
               <li className="sidebarListItem">
                 <Report className="sidebarIcon" />
                 Reports

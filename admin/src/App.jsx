@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/admin_home/Home';
 import Sidebar from "./components/sidebar/Sidebar";
-import './App.css';
-import D_Home from './pages/Deliver_Management/Deliver_Home/D_Home';
+import './app.scss';
+import DHome from './pages/DeliverManagement/DHome/DHome';
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     </div>
       <Routes>
         <Route path="/" exact element={<Home/>} />
-        <Route path="/deliver" element={<D_Home/>} />
+        <Route path="/deliver" element={<DHome/>} />
       </Routes>
     </BrowserRouter>
   );
