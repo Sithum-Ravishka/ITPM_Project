@@ -1,4 +1,5 @@
 import React from 'react'
+import DChart from '../../../components/DeliverManagement/DChart/DChart';
 import Topbar from '../../../components/topbar/Topbar';
 
 import './dHome.scss';
@@ -11,7 +12,7 @@ export default function DHome() {
             <Topbar className="topbar"/>
         </div>
 
-        
+        <DChart title="Delivery Analytics" grid dataKey="New User" />
     </div>
   )
 }
