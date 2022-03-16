@@ -1,30 +1,42 @@
-.topbar{
-    display: flex;
-    flex-direction: row;
+.topbarContainer{
+    width: 1260px;
+    height: 80px;
+    background-color: rgb(255, 255, 255);
+    margin-left: 250px;
+    border-radius: 20px 20px 0px 0px;
+    padding-bottom: 5px;
 
-    .searchbox{
+    .topbar{
         display: flex;
         flex-direction: row;
-        
-        .search{
-            width: 200px;
-            height: 45px;
-            padding-left: 15px;
-            border: none;
-            background-color: rgb(228, 237, 255);
+        float: inline-end;
+        margin-right: 40px;
+        margin-top: 20px;
+
+        .searchbox{
+            display: flex;
+            flex-direction: row;
+            
+            .search{
+                width: 200px;
+                height: 45px;
+                padding-left: 15px;
+                border: none;
+                background-color: rgb(228, 237, 255);
+            }
+            .serBtn{
+                height: 45px;
+                width: 45px;
+                border: none;
+                background-color: rgb(228, 237, 255);
+                cursor: pointer;
+            }
         }
-        .serBtn{
-            height: 45px;
+        .profileImg{
             width: 45px;
-            border: none;
-            background-color: rgb(228, 237, 255);
+            height: 45px;
+            margin-left: 10px;
             cursor: pointer;
         }
-    }
-    .profileImg{
-        width: 45px;
-        height: 45px;
-        margin-left: 10px;
-        cursor: pointer;
     }
 }

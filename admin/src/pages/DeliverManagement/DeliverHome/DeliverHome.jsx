@@ -13,7 +13,6 @@ export default function DeliverHome() {
     <div className="DContainer">
       <div className='header'>
           <span className='title'>Welcome, <span className='subtitle'>Admin</span></span>
-          <Topbar className="topbar"/>
       </div>
       <DChart title="Delivery Analytics" grid dataKey="New User" />
       <div className='smLists'>

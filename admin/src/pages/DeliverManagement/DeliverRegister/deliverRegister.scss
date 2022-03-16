@@ -1,28 +1,22 @@
 .dRContainer{
     width: 1260px;
     height: 100%;
-    min-height: 735px;
+    min-height: 660px;
     background-color: rgb(255, 255, 255);
     margin-left: 250px;
-    border-radius: 20px;
+    border-radius: 0px 0px 20px 20px;
     padding-bottom: 5px;
 
     .dRHeader{
-        display: flex;
-        flex-direction: row;
-
-        .dRTitle{
+        margin-top: -60px;
+        
+        .dRMTitle{
             font-size: 28px;
             color: rgb(15, 0, 102);
             margin-top: 15px;
             font-weight: bold;
             margin-left: 400px;
 
-        }
-
-        .dRTopbar{
-            margin-left: 265px;
-            margin-top: 15px;
         }
     }
 
@@ -42,14 +36,15 @@
 
         .dRSectionLeft{
             margin-top: 200px;
+
             .dRegisterImg{
-                width: 300px;
-                height: 270px;
+                width: 400px;
+                height: 350px;
             }
         }
 
         .dRSectionRight{
-            margin-left: 200px;
+            margin-left: 120px;
             margin-top: 20px;
             display: flex;
             flex-direction: column;
@@ -128,6 +123,30 @@
                 .dRFormRight{
                     margin-top: 22px;
                     margin-left: 20px;
+                }
+            }
+
+            .dRButtons{
+                display: flex;
+                flex-direction: row;
+
+                Button{
+                    height: 40px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    margin: 5px;
+                    cursor: pointer;
+                }
+                .dRReset{
+                    width: 150px;
+                    background-color: red;
+                }
+                .dRCreate{
+                    width: 300px;
+                    background-color: rgb(65, 94, 255);
                 }
             }
         }

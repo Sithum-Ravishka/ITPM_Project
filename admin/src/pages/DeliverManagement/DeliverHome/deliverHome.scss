@@ -1,16 +1,15 @@
 .DContainer{
     width: 1260px;
     height: 100%;
-    min-height: 735px;
+    min-height: 660px;
     background-color: rgb(255, 255, 255);
     margin-left: 250px;
-    border-radius: 20px;
+    border-radius: 0px 0px 20px 20px;
     padding-bottom: 5px;
 
     .header{
-        display: flex;
-        flex-direction: row;
-
+        margin-top: -60px;
+        
         .title{
             font-size: 28px;
             color: black;
@@ -23,11 +22,6 @@
                 font-weight: bold;
                 color: rgb(37, 0, 122);
             }
-        }
-
-        .topbar{
-            margin-left: 660px;
-            margin-top: 15px;
         }
     }
 

@@ -5,6 +5,7 @@ import Sidebar from "./components/sidebar/Sidebar";
 import './app.scss';
 import DeliverHome from './pages/DeliverManagement/DeliverHome/DeliverHome';
 import DeliverRegister from './pages/DeliverManagement/DeliverRegister/DeliverRegister';
+import Topbar from './components/topbar/Topbar';
 
 
 function App() {
@@ -12,6 +13,9 @@ function App() {
     <BrowserRouter>
     <div className='sidebar'> 
       <Sidebar />
+    </div>
+    <div>
+      <Topbar/>
     </div>
       <Routes>
         <Route path="/" exact element={<Home/>} />
