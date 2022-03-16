@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/admin_home/Home';
 import Sidebar from "./components/sidebar/Sidebar";
 import './app.scss';
-import DHome from './pages/DeliverManagement/DHome/DHome';
+import DeliverHome from './pages/DeliverManagement/DeliverHome/DeliverHome';
+import DeliverRegister from './pages/DeliverManagement/DeliverRegister/DeliverRegister';
 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
     </div>
       <Routes>
         <Route path="/" exact element={<Home/>} />
-        <Route path="/deliver" element={<DHome/>} />
+        <Route path="/deliver" element={<DeliverHome/>} />
+        <Route path="/deliver_register" element={<DeliverRegister/>} />
       </Routes>
     </BrowserRouter>
   );

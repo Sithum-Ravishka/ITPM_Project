@@ -18,7 +18,7 @@ export default function DAssignOrders() {
             />
             <div className="dAssignSmProduct">
               <span className="dAssignSmProductname">Cheez-It-Crackers</span>
-              <span className="dAssignmProductname">Rs.180.00</span>
+              <span className="dAssignSmProductname">Rs.180.00</span>
             </div>
           </li>
       </ul>
@@ -33,7 +33,7 @@ export default function DAssignOrders() {
             />
             <div className="dAssignSmProduct">
               <span className="dAssignSmProductname">Cheez-It-Crackers</span>
-              <span className="dAssignmProductname">Rs.180.00</span>
+              <span className="dAssignSmProductname">Rs.180.00</span>
             </div>
           </li>
       </ul>
@@ -48,7 +48,7 @@ export default function DAssignOrders() {
             />
             <div className="dAssignSmProduct">
               <span className="dAssignSmProductname">Cheez-It-Crackers</span>
-              <span className="dAssignmProductname">Rs.180.00</span>
+              <span className="dAssignSmProductname">Rs.180.00</span>
             </div>
           </li>
       </ul>
@@ -63,7 +63,7 @@ export default function DAssignOrders() {
             />
             <div className="dAssignSmProduct">
               <span className="dAssignSmProductname">Cheez-It-Crackers</span>
-              <span className="dAssignmProductname">Rs.180.00</span>
+              <span className="dAssignSmProductname">Rs.180.00</span>
             </div>
           </li>
       </ul>

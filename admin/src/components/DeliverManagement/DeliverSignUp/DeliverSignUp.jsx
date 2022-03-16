@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 import './deliverSignUp.scss';
 import SignUp from './SignUp.png'; 
@@ -12,7 +13,9 @@ export default function DeliverSignUp() {
                 <span className='dRegTitle'>Deliver Register</span>
                 <span className='dRegSubTitle'>Click Here To Delivers</span>
                 <span className='dRegSubTitle'>Registation</span>
-                <button className='dRegBtn'>SIGN UP</button>
+                <Link to="/deliver_register" className="link">
+                  <button className='dRegBtn'>SIGN UP</button>
+                </Link>
             </div>
         </div>
     </div>

@@ -6,9 +6,9 @@ import DeliveryOrders from '../../../components/DeliverManagement/DeliveryOrders
 import DeliveryUsers from '../../../components/DeliverManagement/DeliveryUsers/DeliveryUsers';
 import Topbar from '../../../components/topbar/Topbar';
 
-import './dHome.scss';
+import './deliverHome.scss';
 
-export default function DHome() {
+export default function DeliverHome() {
   return (
     <div className="DContainer">
       <div className='header'>
