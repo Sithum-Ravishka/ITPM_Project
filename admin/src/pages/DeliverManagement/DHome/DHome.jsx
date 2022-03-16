@@ -1,4 +1,5 @@
 import React from 'react'
+import DAssignOrders from '../../../components/DeliverManagement/DAssignOrders/DAssignOrders';
 import DChart from '../../../components/DeliverManagement/DChart/DChart';
 import DeliveryOrders from '../../../components/DeliverManagement/DeliveryOrders/DeliveryOrders';
 import DeliveryUsers from '../../../components/DeliverManagement/DeliveryUsers/DeliveryUsers';
@@ -17,6 +18,7 @@ export default function DHome() {
       <div className='smLists'>
         <DeliveryUsers/>
         <DeliveryOrders/>
+        <DAssignOrders/>
       </div>
     </div>
   )
