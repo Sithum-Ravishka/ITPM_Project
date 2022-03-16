@@ -1,6 +1,7 @@
 import React from 'react'
 import DChart from '../../../components/DeliverManagement/DChart/DChart';
-import DeliverList from '../../../components/DeliverManagement/DeliverList/DeliverList';
+import DeliveryOrders from '../../../components/DeliverManagement/DeliveryOrders/DeliveryOrders';
+import DeliveryUsers from '../../../components/DeliverManagement/DeliveryUsers/DeliveryUsers';
 import Topbar from '../../../components/topbar/Topbar';
 
 import './dHome.scss';
@@ -8,14 +9,15 @@ import './dHome.scss';
 export default function DHome() {
   return (
     <div className="DContainer">
-        <div className='header'>
-            <span className='title'>Welcome, <span className='subtitle'>Admin</span></span>
-            <Topbar className="topbar"/>
-        </div>
-
-        <DChart title="Delivery Analytics" grid dataKey="New User" />
-
-        <DeliverList/>
+      <div className='header'>
+          <span className='title'>Welcome, <span className='subtitle'>Admin</span></span>
+          <Topbar className="topbar"/>
+      </div>
+      <DChart title="Delivery Analytics" grid dataKey="New User" />
+      <div className='smLists'>
+        <DeliveryUsers/>
+        <DeliveryOrders/>
+      </div>
     </div>
   )
 }
