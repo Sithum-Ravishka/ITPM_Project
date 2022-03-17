@@ -8,7 +8,7 @@ import {
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import "./sidebar.scss";
-import logo from './logo.png'; 
+import logo from './logo.png';
 
 export default function Sidebar() {
   return (
@@ -18,7 +18,7 @@ export default function Sidebar() {
           <ul className="sidebarList">
             <Link to="/" className="link">
               <div className="sidebarListlogo">
-                  <img component={Link} to="/" src={logo} alt="Logo" className="logo"/>
+                <img component={Link} to="/" src={logo} alt="Logo" className="logo" />
               </div>
             </Link>
             <Link to="/" className="link">
@@ -63,4 +63,3 @@ export default function Sidebar() {
     </div>
   );
 }
-

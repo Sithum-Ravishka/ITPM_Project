@@ -1,7 +1,7 @@
 .sidebar {
   width: 250px;
   height: 100%;
-  background-color:  rgb(0, 153, 13);
+  background-color: rgb(0, 153, 13);
   margin-top: -10px;
 
   .sidebarWrapper {
@@ -18,11 +18,11 @@
         .link {
           color: white;
           text-decoration: none;
-          
-          .sidebarListlogo{
+
+          .sidebarListlogo {
             margin-left: 40px;
             margin-bottom: 20px;
-            .logo{
+            .logo {
               width: 150px;
               height: 150px;
             }
@@ -36,7 +36,7 @@
             border-radius: 10px;
             margin-top: 30px;
 
-            .sidebarIcon{
+            .sidebarIcon {
               margin-right: 5px;
               font-size: 20px !important;
             }
@@ -53,11 +53,3 @@
     }
   }
 }
-
-
-
-
-
-
-
-
