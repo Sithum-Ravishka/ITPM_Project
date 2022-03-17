@@ -29,12 +29,12 @@ export default function Topbar() {
                             Product
                         </li>
                     </Link>
-                    <Link to="/" className="link">
+                    <Link to="/about" className="link">
                         <li className="topbarListItem">
                             About
                         </li>
                     </Link>
-                    <Link to="/" className="link">
+                    <Link to="/contact" className="link">
                         <li className="topbarListItem">
                             Contact
                         </li>
@@ -44,12 +44,12 @@ export default function Topbar() {
                             Sign In
                         </li>
                     </Link>
-                    <Link to="/deliver" className="link">
+                    <Link to="/cart" className="link">
                         <li className="topbarListItem ">
                             <ShoppingBasket className="topbarIcon" />
                         </li>
                     </Link>
-                    <Link to="/deliver" className="link">
+                    <Link to="/profile" className="link">
                         <li className="topbarListItem ">
                             <AccountCircle className="topbarIcon" />
                         </li>

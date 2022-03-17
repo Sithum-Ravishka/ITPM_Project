@@ -26,7 +26,7 @@
     .topbarRight {
       display: flex;
       flex-direction: row;
-      margin-left: 490px;
+      margin-left: 390px;
 
       .link {
         color: white;
@@ -37,13 +37,13 @@
         }
 
         .topbarListItem {
-          font-size: 16px;
+          font-size: 18px;
           font-weight: 600;
           padding: 10px;
           cursor: pointer;
           display: flex;
           flex-direction: row;
-          margin-left: 50px;
+          margin-left: 60px;
           align-items: center;
           border-radius: 10px;
           margin-top: 40px;
@@ -51,7 +51,7 @@
         
         .topbarListItem.active,
         .topbarListItem:hover {
-          font-weight: 700;
+          font-weight: 600;
           height: 45px;
           background-color: rgb(255, 255, 255);
           color: black;
