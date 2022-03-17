@@ -13,7 +13,7 @@ export default function DeliverSignUp() {
                 <span className='dRegTitle'>Deliver Register</span>
                 <span className='dRegSubTitle'>Click Here To Delivers</span>
                 <span className='dRegSubTitle'>Registation</span>
-                <Link to="/deliver_register" className="link">
+                <Link to="/deliver-register" className="link">
                   <button className='dRegBtn'>SIGN UP</button>
                 </Link>
             </div>

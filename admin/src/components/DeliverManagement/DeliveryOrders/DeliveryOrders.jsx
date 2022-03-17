@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import "./deliveryOrders.scss"
 
@@ -6,7 +7,9 @@ export default function DeliveryOrders() {
   return (
     <div className="dOrderSm">
       <span className="dOrderSmTitle">Order List for Deliver</span>
-      <span className="dOrderSmSeeAll">See All {'>>'}</span>
+      <Link to="/delivery-order-list" className="link">
+        <span className="dOrderSmSeeAll">See All {'>>'}</span>
+      </Link>
       <ul className="dOrderSmList">
           <li className="dOrderSmListItem">
             <img

@@ -6,6 +6,7 @@ import './app.scss';
 import DeliverHome from './pages/DeliverManagement/DeliverHome/DeliverHome';
 import DeliverRegister from './pages/DeliverManagement/DeliverRegister/DeliverRegister';
 import Topbar from './components/topbar/Topbar';
+import DeliveryOrderList from './pages/DeliverManagement/DeliveryOrderList/DeliveryOrderList';
 
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
       <Routes>
         <Route path="/" exact element={<Home/>} />
         <Route path="/deliver" element={<DeliverHome/>} />
-        <Route path="/deliver_register" element={<DeliverRegister/>} />
+        <Route path="/deliver-register" element={<DeliverRegister/>} />
+        <Route path="/delivery-order-list" element={<DeliveryOrderList/>} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,5 +1,5 @@
 import React from 'react'
-import Topbar from '../../../components/topbar/Topbar'
+import { Link } from 'react-router-dom';
 import deliverRegister from './deliverRegister.PNG';
 import './deliverRegister.scss';
 
@@ -7,7 +7,9 @@ export default function DeliverRegister() {
   return (
     <div className="dRContainer">
         <div className='dRHeader'>
+        <Link to="/deliver-register" className="link">
             <span className='dRMTitle'>Deliver Registration</span>
+        </Link>
         </div>
         
         <div className="dRContent">
