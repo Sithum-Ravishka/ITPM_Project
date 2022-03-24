@@ -27,18 +27,18 @@ export default function DeliverAssign() {
               <div className="dRInfobox">
                 <span className="dAspan">Address :</span>
                 <textarea
-                  placeholder="Sithum Ravishka RavishkaSithum RavishkaSithum Ravishka"
+                  placeholder="No: 22, daramapalagama, iddagoda, mathugma, kaluthra, watersn province, Sri lanka."
                   disabled
                   className="dAInputAddress"
                 />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Zip Code :</span>
-                <input placeholder="Sithum Ravishka" disabled />
+                <input placeholder="12100" disabled />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Mobile :</span>
-                <input placeholder="Sithum Ravishka" disabled />
+                <input placeholder="076-8367257" disabled />
               </div>
             </div>
           </div>

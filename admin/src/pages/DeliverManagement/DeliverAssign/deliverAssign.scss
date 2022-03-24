@@ -69,6 +69,7 @@
             background-color: rgb(255, 255, 255);
             width: 500px;
             display: block;
+            margin-top: 7px;
 
             .dAspan {
               font-weight: 600;
@@ -102,10 +103,10 @@
 
       .dADeliverDetails {
         width: 500px;
-        height: 250px;
+        height: 260px;
         padding: 20px;
         margin: 20px;
-        background-color: rgb(219, 219, 219);
+        background-color: rgb(224, 224, 224);
         box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
 
         .dATI {
@@ -147,7 +148,7 @@
             height: 25px;
             padding: 5px 15px;
             background-color: white;
-            color: rgb(92, 92, 92);
+            color: rgb(170, 170, 170);
             font-size: 16px;
             margin-left: 140px;
             margin-top: -30px;
@@ -165,7 +166,7 @@
 
       .dAProductDetails {
         width: 550px;
-        height: 310px;
+        height: 340px;
         padding: 20px;
         margin: 20px;
         background-color: rgb(255, 255, 255);
@@ -237,7 +238,7 @@
 
       .dABtn {
         margin-left: 250px;
-        margin-top: 100px;
+        margin-top: 80px;
 
         button {
           font-size: 16px;
