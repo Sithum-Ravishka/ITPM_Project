@@ -5,23 +5,24 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export default function DeliveryOrderList() {
-  const [ data ] = useState(productRows);
+  const [data] = useState(productRows);
 
   const columns = [
-    { 
-      field: "id", 
-      headerName: "ID", 
-      width: 120 
+    {
+      field: "id",
+      headerName: "ID",
+      width: 120,
     },
     {
       field: "custormerName",
       headerName: "Custormer Name",
       width: 200,
     },
-    { 
-      field: "address", 
-      headerName: "Address", 
-      width: 220 },
+    {
+      field: "address",
+      headerName: "Address",
+      width: 220,
+    },
     {
       field: "contactNumber",
       headerName: "Contact Number",
@@ -44,7 +45,7 @@ export default function DeliveryOrderList() {
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/orderassign/" + params.row.id}>
+            <Link to={"/delivery-assign/" + params.row.id}>
               <button className="dOrdersListAssign">Assign To Deliver</button>
             </Link>
           </>
@@ -55,9 +56,9 @@ export default function DeliveryOrderList() {
 
   return (
     <div className="dordersContainer">
-      <div className='dRHeader'>
+      <div className="dRHeader">
         <Link to="/delivery-order-list" className="link">
-            <span className='dRMTitle'>Order List for Deliver</span>
+          <span className="dRMTitle">Order List for Deliver</span>
         </Link>
       </div>
 

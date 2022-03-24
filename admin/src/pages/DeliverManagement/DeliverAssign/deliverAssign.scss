@@ -1,0 +1,256 @@
+.dAContainer {
+  width: 1260px;
+  height: 100%;
+  min-height: 680px;
+  background-color: rgb(255, 255, 255);
+  margin-left: 250px;
+  border-radius: 0px 0px 20px 20px;
+  padding-bottom: 20px;
+
+  .dAHeader {
+    margin-top: -60px;
+
+    .link {
+      text-decoration: none;
+    }
+
+    .dATitle {
+      font-size: 28px;
+      color: rgb(15, 0, 102);
+      margin-top: 15px;
+      font-weight: bold;
+      margin-left: 400px;
+    }
+  }
+
+  .dASection {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 20px;
+    width: 1210px;
+    min-height: 600px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+
+    .dASectionLeft {
+      .dAcustomerDetails {
+        width: 500px;
+        height: 250px;
+        padding: 20px;
+        margin: 20px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+
+        .dATI {
+          display: flex;
+          flex-direction: row;
+          margin-left: 80px;
+
+          .dAProImg {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 20px;
+          }
+
+          .dACTitle {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 15px;
+          }
+        }
+        .dAInfo {
+          display: flex;
+          flex-direction: column;
+          margin-top: 20px;
+
+          .dRInfobox {
+            background-color: rgb(255, 255, 255);
+            width: 500px;
+            display: block;
+
+            .dAspan {
+              font-weight: 600;
+              width: 130px;
+              display: block;
+              text-align: end;
+            }
+
+            input {
+              width: 300px;
+              margin-top: -16px;
+              margin-left: 140px;
+              display: block;
+              background-color: transparent;
+              border: none;
+            }
+            .dAInputAddress {
+              margin-top: -20px;
+              margin-left: 140px;
+              max-width: 300px;
+              min-width: 300px;
+              max-height: 60px;
+              min-height: 60px;
+              display: block;
+              background-color: transparent;
+              border: none;
+            }
+          }
+        }
+      }
+
+      .dADeliverDetails {
+        width: 500px;
+        height: 250px;
+        padding: 20px;
+        margin: 20px;
+        background-color: rgb(219, 219, 219);
+        box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+
+        .dATI {
+          display: flex;
+          flex-direction: row;
+          margin-left: 140px;
+          margin-bottom: 30px;
+
+          .dADeliIcon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 20px;
+          }
+
+          .dACTitle {
+            font-size: 22px;
+            font-weight: bold;
+          }
+        }
+        .dRInputBox {
+          display: flex;
+          flex-direction: row;
+          margin-top: 20px;
+          display: block;
+          margin-left: 20px;
+
+          .dRLableName {
+            width: 130px;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 5px;
+            display: block;
+            text-align: end;
+          }
+
+          .dRinput {
+            width: 270px;
+            height: 25px;
+            padding: 5px 15px;
+            background-color: white;
+            color: rgb(92, 92, 92);
+            font-size: 16px;
+            margin-left: 140px;
+            margin-top: -30px;
+            box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+            border-style: double;
+            display: block;
+          }
+        }
+      }
+    }
+
+    .dAsectionRight {
+      display: flex;
+      flex-direction: column;
+
+      .dAProductDetails {
+        width: 550px;
+        height: 310px;
+        padding: 20px;
+        margin: 20px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+
+        .dATI {
+          display: flex;
+          flex-direction: column-reverse;
+          margin-left: 120px;
+
+          .dAProImg {
+            width: 70px;
+            height: 70px;
+            margin-left: 90px;
+            margin-top: 5px;
+          }
+
+          .dACTitle {
+            font-size: 24px;
+            font-weight: bold;
+          }
+        }
+        .dAInfo {
+          display: flex;
+          flex-direction: column;
+          margin-top: 10px;
+
+          .dRInfobox {
+            background-color: white;
+            width: 550px;
+            height: 100%;
+            display: block;
+
+            .dAspan {
+              font-weight: 600;
+              width: 200px;
+              display: block;
+              text-align: end;
+              margin-top: 10px;
+            }
+
+            .dAPaymentInfo {
+              font-size: 18px;
+              font-weight: bold;
+              margin-left: 20px;
+            }
+
+            input {
+              margin-top: -15px;
+              margin-left: 220px;
+              display: block;
+              background-color: transparent;
+              border: none;
+            }
+            .dAInputAddress {
+              margin-top: -20px;
+              margin-left: 220px;
+              max-width: 300px;
+              min-width: 300px;
+              max-height: 60px;
+              min-height: 60px;
+              display: block;
+              background-color: transparent;
+              border: none;
+            }
+          }
+        }
+      }
+
+      .dABtn {
+        margin-left: 250px;
+        margin-top: 100px;
+
+        button {
+          font-size: 16px;
+          width: 200px;
+          height: 40px;
+          border-radius: 10px;
+          background-color: rgb(75, 93, 255);
+          color: white;
+          font-weight: bold;
+          border: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
