@@ -3,18 +3,27 @@ import { DataGrid } from "@material-ui/data-grid";
 import { productRows } from "../../../dummyData";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
+import { useContext } from "react";
+import { DeliverContext } from "../../../context/deliverContext/DeliverContext";
+import {  getDelivers } from "../../../context/deliverContext/apiCalls";
+
 
 export default function DeliveryOrderList() {
-  const [data] = useState(productRows);
+  const { delivers, dispatch } = useContext(DeliverContext);
+
+  useEffect(() => {
+    getDelivers(dispatch);
+  }, [dispatch]);
 
   const columns = [
     {
-      field: "id",
+      field: "_id",
       headerName: "ID",
       width: 120,
     },
     {
-      field: "custormerName",
+      field: "customerName",
       headerName: "Custormer Name",
       width: 200,
     },
@@ -24,7 +33,7 @@ export default function DeliveryOrderList() {
       width: 220,
     },
     {
-      field: "contactNumber",
+      field: "mobile",
       headerName: "Contact Number",
       width: 120,
     },
@@ -34,7 +43,7 @@ export default function DeliveryOrderList() {
       width: 200,
     },
     {
-      field: "orderPrice",
+      field: "totalPrice",
       headerName: "Order Price",
       width: 150,
     },
@@ -64,11 +73,12 @@ export default function DeliveryOrderList() {
 
       <div className="dOrdersList">
         <DataGrid
-          rows={data}
+          rows={delivers}
           disableSelectionOnClick
           columns={columns}
           pageSize={10}
           checkboxSelection
+          getRowId={(r) => r._id}
         />
       </div>
     </div>

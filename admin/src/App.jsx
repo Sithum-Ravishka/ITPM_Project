@@ -22,7 +22,7 @@ function App() {
         <Route path="/" exact element={<Home />} />
         <Route path="/deliver" element={<DeliverHome />} />
         <Route path="/deliver-register" element={<DeliverRegister />} />
-        <Route path="/delivery-order-list" element={<DeliveryOrderList />} />
+        <Route path="/delivers" element={<DeliveryOrderList />} />
         <Route path="/delivery-assign" element={<DeliverAssign />} />
       </Routes>
     </BrowserRouter>

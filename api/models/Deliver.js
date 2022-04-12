@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const DeliverSchema = new mongoose.Schema(
   {
-    customerName: { type: String, },
+    customerName: { type: String },
     address: { type: String },
     zipCode: { type: String },
     mobile: { type: String },

@@ -7,7 +7,7 @@ export default function DeliveryOrders() {
   return (
     <div className="dOrderSm">
       <span className="dOrderSmTitle">Order List for Deliver</span>
-      <Link to="/delivery-order-list" className="link">
+      <Link to="/delivers" className="link">
         <span className="dOrderSmSeeAll">See All {'>>'}</span>
       </Link>
       <ul className="dOrderSmList">
