@@ -8,6 +8,7 @@ import DeliverRegister from "./pages/DeliverManagement/DeliverRegister/DeliverRe
 import Topbar from "./components/topbar/Topbar";
 import DeliveryOrderList from "./pages/DeliverManagement/DeliveryOrderList/DeliveryOrderList";
 import DeliverAssign from "./pages/DeliverManagement/DeliverAssign/DeliverAssign";
+import Categories from "./pages/category/categories";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/deliver-register" element={<DeliverRegister />} />
         <Route path="/delivers" element={<DeliveryOrderList />} />
         <Route path="/delivery-assign" element={<DeliverAssign />} />
+        <Route path="/categories" element={<Categories />} />
       </Routes>
     </BrowserRouter>
   );
