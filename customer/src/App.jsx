@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import './app.scss';
 import Topbar from './components/Topbar/Topbar';
 import DeliverLogin from './pages/DeliverManagement/DeliverLogin/DeliverLogin';
+import ShoppingCart from './pages/OrderManagement/ShoppingCart/ShoppingCart';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/signin" exact element={<DeliverLogin />} />
+        <Route path="/shoppingcart" element={<ShoppingCart />} />
       </Routes>
       
     </BrowserRouter>
