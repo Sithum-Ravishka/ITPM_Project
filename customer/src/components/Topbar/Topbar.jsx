@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 import "./topbar.scss";
 import logo from './logo.png';
 
-export default function Topbar() {
+export default function Topbar({setShow, size}) {
+    
     return (
         <div className="topbar">
             <ul className="topbarList">
@@ -44,9 +45,16 @@ export default function Topbar() {
                             Sign In
                         </li>
                     </Link>
-                    <Link to="/cart" className="link">
+                    <Link to="/shoppingcart" className="link">
                         <li className="topbarListItem ">
-                            <ShoppingBasket className="topbarIcon" />
+                            <span>
+                                <div className="cart" onClick={()=>setShow(false)}>
+                                <span>
+                                    <i className="fas fa-cart-plus"></i>
+                                </span>
+                                <span>{size}</span>
+                                </div>
+                            </span>
                         </li>
                     </Link>
                     <Link to="/profile" className="link">
