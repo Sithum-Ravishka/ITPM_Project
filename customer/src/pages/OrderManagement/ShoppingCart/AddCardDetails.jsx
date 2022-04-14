@@ -1,5 +1,5 @@
 import React from "react";
-import "./ShoppinCart.scss";
+import "./AddCardDetails.scss";
 const ShoppingCart = () => {
   return (
     <div className="SPCContainer">
