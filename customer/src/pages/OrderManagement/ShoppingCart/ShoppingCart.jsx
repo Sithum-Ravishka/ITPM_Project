@@ -9,8 +9,8 @@ const ShoppingCart = () => {
         <div className="contactDetails">
           <span>Contact Details</span>
           <div className="cd_input">
-            <input type="text" placeholder="" />
-            <input type="text" />
+            <input type="text" placeholder="Name*" />
+            <input type="text" placeholder="Contact Number*"/>
           </div>
 
           <div className="addrssDetails">
