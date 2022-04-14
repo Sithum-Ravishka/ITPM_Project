@@ -1,0 +1,133 @@
+.SPCContainer {
+    width: 1860px;
+    height: 100%;
+    min-height: 810px;
+    background-color: white;
+    margin: auto;
+    border-radius: 20px;
+    padding: 10px;
+  
+    .SPCTitle{
+      font-size: 28px;
+      font-weight: bold;
+      margin-left: 10px;
+      margin-top: 10px;
+      padding: 20px;
+    }
+
+
+    .S_content{
+      background-color:azure;
+      padding: 50px;
+
+      .contactDetails{
+        display: flex;
+        flex-direction: column;
+        .name{
+          margin-left: 10px;
+          font-weight: bold;
+        }
+
+        .cd_input{
+          display: flex;
+          flex-direction: row;
+          padding: 10px;
+          padding-bottom: 45px;
+
+          input{
+            width: 270px;
+            height: 40px;
+            padding: 5px 15px;
+            background-color: white;
+            color: gray;
+            font-size: 16px;
+            box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+            border-style: double;
+            margin-right: 50px;
+            border-radius: 5px;
+          }
+        }
+      }
+      .addrssDetails{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        margin-left: -10px;
+        .name{
+          margin-left: 10px;
+        }
+
+        .address_inputs{
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 55px;
+          padding: 10px;
+          
+
+          input{
+            width: 270px;
+            height: 40px;
+            padding: 5px 15px;
+            background-color: white;
+            color: gray;
+            font-size: 16px;
+            box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+            border-style: double;
+            margin-right: 50px;
+            border-radius: 5px;
+          }
+
+        }
+        .adress_input2{
+          display: flex;
+          flex-direction: row;
+          margin-bottom: 60px;
+          padding: 10px;
+
+          input{
+            width: 270px;
+            height: 40px;
+            padding: 5px 15px;
+            background-color: white;
+            color: gray;
+            font-size: 16px;
+            box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+            border-style: double;
+            margin-right: 50px;
+            border-radius: 5px;
+          }
+        }
+      }
+      .checkBox{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 60px;  
+        margin-left: 10px;
+        border-radius: 10px;
+        font-weight: bold;
+
+        .checkName{
+          margin-left: 10px;
+          margin-top: -3px;
+        }
+      }
+      .buttons{
+        
+        .save{
+           background-color: #FF6347;
+           width: 200px;
+           height: 50px;
+           border-radius: 5px;
+           margin-right: 50px;
+           font-weight: bold;
+           
+        }
+        .clear{
+          width: 200px;
+          height: 50px;
+          border-radius: 5px;
+          font-weight: bold;
+        }
+      }
+    }
+}
