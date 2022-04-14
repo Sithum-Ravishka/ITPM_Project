@@ -57,7 +57,7 @@ export default function Topbar({setShow, size}) {
                             </span>
                         </li>
                     </Link>
-                    <Link to="/profile" className="link">
+                    <Link to="/user-profile" className="link">
                         <li className="topbarListItem ">
                             <AccountCircle className="topbarIcon" />
                         </li>
