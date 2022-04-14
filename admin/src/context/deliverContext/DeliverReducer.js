@@ -19,6 +19,81 @@ const DeliverReducer = (state, action) => {
             error: true,
         };
 
+        case "CREATE_DELIVER_START":
+            return {
+              ...state,
+              isFetching: true,
+              error: false,
+            };
+          case "CREATE_DELIVER_SUCCESS":
+            return {
+              delivers: [...state.delivers, action.payload],
+              isFetching: false,
+              error: false,
+            };
+          case "CREATE_DELIVER_FAILURE":
+            return {
+              ...state,
+              isFetching: false,
+              error: true,
+            };
+            
+            case "UPDATE_DELIVER_START":
+              return {
+                ...state,
+                isFetching:true
+              };
+            case "UPDATE_DELIVER_SUCCESS":
+              return {
+                user: action.payload,
+                isFetching: false,
+                error: false,
+              };
+            case "UPDATE_DELIVER_FAILURE":
+              return {
+                user: state.user,
+                isFetching: false,
+                error: true,
+              };
+      
+          case "UPLOAD_DELIVER_START":
+            return {
+              ...state,
+              isFetching: true,
+              error: false,
+            };
+          case "UPLOAD_DELIVER_SUCCESS":
+            return {
+              delivers: state.delivers.map(
+                (deliver) => deliver._id === action.payload._id && action.payload
+              ),
+              isFetching: false,
+              error: false,
+            };
+          case "UPLOAD_DELIVER_FAILURE":
+            return {
+              ...state,
+              isFetching: false,
+              error: true,
+            };
+          case "DELETE_DELIVER_START":
+            return {
+              ...state,
+              isFetching: true,
+              error: false,
+            };
+          case "DELETE_DELIVER_SUCCESS":
+            return {
+              delivers: state.delivers.filter((deliver) => deliver._id !== action.payload),
+              isFetching: false,
+              error: false,
+            };
+          case "DELETE_DELIVER_FAILURE":
+            return {
+              ...state,
+              isFetching: false,
+              error: true,
+            };
         default:
             return { ...state };
     }

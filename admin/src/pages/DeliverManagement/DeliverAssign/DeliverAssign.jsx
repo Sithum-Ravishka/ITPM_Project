@@ -1,10 +1,31 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import "./deliverAssign.scss";
 import profile from "./profile.jpg";
 import product from "./product.webp";
+import { useContext } from "react";
+import { DeliverContext } from "../../../context/deliverContext/DeliverContext";
+import { useState } from "react";
 
 export default function DeliverAssign() {
+  const Navigate = useNavigate();
+  const deliver = Navigate.deliver;
+
+  const [updatedeliver, setUpdateDeliver] = useState(null);
+  
+  const { dispatch } = useContext(DeliverContext);
+
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setUpdateDeliver({ ...updatedeliver, [e.target.name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    updatedeliver(updatedeliver, dispatch);
+  };
+
   return (
     <div className="dAContainer">
       <div className="dAHeader">
@@ -21,7 +42,7 @@ export default function DeliverAssign() {
             </div>
             <div className="dAInfo">
               <div className="dRInfobox">
-                <span className="dAspan">Customer Name :</span>
+                <span className="dAspan">{deliver.customerName}</span>
                 <input placeholder="Sithum Ravishka" disabled />
               </div>
               <div className="dRInfobox">

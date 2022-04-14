@@ -1,8 +1,6 @@
 import "./deliveryOrderList.scss";
 import { DataGrid } from "@material-ui/data-grid";
-import { productRows } from "../../../dummyData";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { DeliverContext } from "../../../context/deliverContext/DeliverContext";
@@ -21,6 +19,11 @@ export default function DeliveryOrderList() {
       field: "_id",
       headerName: "ID",
       width: 120,
+    },
+    {
+      field: "deliver",
+      headerName: "Deliver",
+      width: 10,
     },
     {
       field: "customerName",
@@ -54,7 +57,8 @@ export default function DeliveryOrderList() {
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/delivery-assign/" + params.row.id}>
+            <Link 
+              to={{ pathname: "/deliver/" + params.row._id, deliver: params.row }}>
               <button className="dOrdersListAssign">Assign To Deliver</button>
             </Link>
           </>

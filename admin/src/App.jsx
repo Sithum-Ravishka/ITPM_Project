@@ -21,11 +21,12 @@ function App() {
       </div>
       <Routes>
         <Route path="/" exact element={<Home />} />
-        <Route path="/deliver" element={<DeliverHome />} />
+        <Route path="/deliver-home" element={<DeliverHome />} />
         <Route path="/deliver-register" element={<DeliverRegister />} />
         <Route path="/delivers" element={<DeliveryOrderList />} />
-        <Route path="/delivery-assign" element={<DeliverAssign />} />
+        <Route path="/deliver/:deliverId" element={<DeliverAssign/>} />
         <Route path="/categories" element={<Categories />} />
+
       </Routes>
     </BrowserRouter>
   );
