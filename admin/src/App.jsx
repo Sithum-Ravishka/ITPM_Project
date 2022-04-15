@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {   BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/admin_home/Home";
 import Sidebar from "./components/sidebar/Sidebar";
 import "./app.scss";
@@ -12,22 +12,25 @@ import Categories from "./pages/category/categories";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <div className="sidebar">
         <Sidebar />
       </div>
       <div>
         <Topbar />
       </div>
-      <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route path="/deliver" element={<DeliverHome />} />
-        <Route path="/deliver-register" element={<DeliverRegister />} />
-        <Route path="/delivers" element={<DeliveryOrderList />} />
-        <Route path="/delivery-assign" element={<DeliverAssign />} />
-        <Route path="/categories" element={<Categories />} />
-      </Routes>
-    </BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route> 
+        <Route path="/deliver-home"><DeliverHome /></Route>
+        <Route path="/deliver-register"><DeliverRegister /></Route>
+        <Route path="/delivers"><DeliveryOrderList /></Route>
+        <Route path="/deliver/:deliverId"><DeliverAssign/></Route> 
+        <Route path="/categories"><Categories /></Route>
+
+      </Switch>
+    </Router>
   );
 }
 

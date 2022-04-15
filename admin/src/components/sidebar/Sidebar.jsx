@@ -57,7 +57,7 @@ export default function Sidebar() {
                 Order Management
               </li>
             </Link>
-            <Link to="/deliver" className="link">
+            <Link to="/deliver-home" className="link">
               <li className="sidebarListItem active">
                 <LocalShipping className="sidebarIcon" />
                 Deliver Management

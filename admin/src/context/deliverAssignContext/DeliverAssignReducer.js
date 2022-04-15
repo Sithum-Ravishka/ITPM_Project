@@ -1,94 +1,94 @@
-const DeliverReducer = (state, action) => {
+const DeliverAssignReducer = (state, action) => {
     switch (action.type) {
-        case "GET_DELIVERS_START":
+        case "GET_DELIVERASSIGNS_START":
         return {
-            delivers: [],
+            deliverassigns: [],
             isFetching: true,
             error: false,
         };
-        case "GET_DELIVERS_SUCCESS":
+        case "GET_DELIVERASSIGNS_SUCCESS":
         return {
-            delivers: action.payload,
+            deliverassigns: action.payload,
             isFetching: false,
             error: false,
         };
-        case "GET_DELIVERS_FAILURE":
+        case "GET_DELIVERASSIGNS_FAILURE":
         return {
-            delivers: [],
+            deliverassigns: [],
             isFetching: false,
             error: true,
         };
 
-        case "CREATE_DELIVER_START":
+        case "CREATE_DELIVERASSIGN_START":
             return {
               ...state,
               isFetching: true,
               error: false,
             };
-          case "CREATE_DELIVER_SUCCESS":
+          case "CREATE_DELIVERASSIGN_SUCCESS":
             return {
-              delivers: [...state.delivers, action.payload],
+              deliverassigns: [...state.deliverassigns, action.payload],
               isFetching: false,
               error: false,
             };
-          case "CREATE_DELIVER_FAILURE":
+          case "CREATE_DELIVERASSIGN_FAILURE":
             return {
               ...state,
               isFetching: false,
               error: true,
             };
             
-            case "UPDATE_DELIVER_START":
+            case "UPDATE_DELIVERASSIGN_START":
               return {
                 ...state,
                 isFetching:true
               };
-            case "UPDATE_DELIVER_SUCCESS":
+            case "UPDATE_DELIVERASSIGN_SUCCESS":
               return {
                 user: action.payload,
                 isFetching: false,
                 error: false,
               };
-            case "UPDATE_DELIVER_FAILURE":
+            case "UPDATE_DELIVERASSIGN_FAILURE":
               return {
                 user: state.user,
                 isFetching: false,
                 error: true,
               };
       
-          case "UPLOAD_DELIVER_START":
+          case "UPLOAD_DELIVERASSIGN_START":
             return {
               ...state,
               isFetching: true,
               error: false,
             };
-          case "UPLOAD_DELIVER_SUCCESS":
+          case "UPLOAD_DELIVERASSIGN_SUCCESS":
             return {
-              delivers: state.delivers.map(
-                (deliver) => deliver._id === action.payload._id && action.payload
+              deliverassigns: state.deliverassigns.map(
+                (deliverassign) => deliverassign._id === action.payload._id && action.payload
               ),
               isFetching: false,
               error: false,
             };
-          case "UPLOAD_DELIVER_FAILURE":
+          case "UPLOAD_DELIVERASSIGN_FAILURE":
             return {
               ...state,
               isFetching: false,
               error: true,
             };
-          case "DELETE_DELIVER_START":
+          case "DELETE_DELIVERASSIGN_START":
             return {
               ...state,
               isFetching: true,
               error: false,
             };
-          case "DELETE_DELIVER_SUCCESS":
+          case "DELETE_DELIVERASSIGN_SUCCESS":
             return {
-              delivers: state.delivers.filter((deliver) => deliver._id !== action.payload),
+              deliverassigns: state.deliverassigns.filter((deliverassign) => deliverassign._id !== action.payload),
               isFetching: false,
               error: false,
             };
-          case "DELETE_DELIVER_FAILURE":
+          case "DELETE_DELIVERASSIGN_FAILURE":
             return {
               ...state,
               isFetching: false,
@@ -98,4 +98,4 @@ const DeliverReducer = (state, action) => {
             return { ...state };
     }
 };
-export default DeliverReducer;
+export default DeliverAssignReducer;

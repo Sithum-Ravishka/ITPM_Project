@@ -5,12 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { DeliverContextProvider } from './context/deliverContext/DeliverContext';
 import { AuthContextProvider } from './context/authContext/AuthContext';
+import { DeliverAssignContextProvider } from './context/deliverAssignContext/DeliverAssignContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <AuthContextProvider>
       <DeliverContextProvider>
-        <App />
+        <DeliverAssignContextProvider>
+          <App />
+        </DeliverAssignContextProvider>
       </DeliverContextProvider>
     </AuthContextProvider>
   </React.StrictMode>,
