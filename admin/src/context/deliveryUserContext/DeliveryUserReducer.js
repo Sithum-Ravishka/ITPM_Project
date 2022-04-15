@@ -1,58 +1,58 @@
-const DeliverReducer = (state, action) => {
+const DeliveryUsersReducer = (state, action) => {
     switch (action.type) {
-        case "GET_DELIVERS_START":
+        case "GET_DELIVERYUSERS_START":
         return {
-            delivers: [],
+            deliveryusers: [],
             isFetching: true,
             error: false,
         };
-        case "GET_DELIVERS_SUCCESS":
+        case "GET_DELIVERYUSERS_SUCCESS":
         return {
-            delivers: action.payload,
+            deliveryusers: action.payload,
             isFetching: false,
             error: false,
         };
-        case "GET_DELIVERS_FAILURE":
+        case "GET_DELIVERYUSERS_FAILURE":
         return {
-            delivers: [],
+            deliveryusers: [],
             isFetching: false,
             error: true,
         };
 
-        case "CREATE_DELIVER_START":
+        case "CREATE_DELIVERYUSER_START":
             return {
               ...state,
               isFetching: true,
               error: false,
             };
-          case "CREATE_DELIVER_SUCCESS":
+          case "CREATE_DELIVERYUSER_SUCCESS":
             return {
-              delivers: [...state.delivers, action.payload],
+              deliveryusers: [...state.deliveryusers, action.payload],
               isFetching: false,
               error: false,
             };
-          case "CREATE_DELIVER_FAILURE":
+          case "CREATE_DELIVERYUSER_FAILURE":
             return {
               ...state,
               isFetching: false,
               error: true,
             };
       
-          case "UPLOAD_DELIVER_START":
+          case "UPLOAD_DELIVERYUSER_START":
             return {
               ...state,
               isFetching: true,
               error: false,
             };
-          case "UPLOAD_DELIVER_SUCCESS":
+          case "UPLOAD_DELIVERYUSER_SUCCESS":
             return {
-              delivers: state.delivers.map(
-                (deliver) => deliver._id === action.payload._id && action.payload
+              deliveryusers: state.deliveryusers.map(
+                (deliveryuser) => deliveryuser._id === action.payload._id && action.payload
               ),
               isFetching: false,
               error: false,
             };
-          case "UPLOAD_DELIVER_FAILURE":
+          case "UPLOAD_DELIVERYUSER_FAILURE":
             return {
               ...state,
               isFetching: false,
@@ -62,4 +62,4 @@ const DeliverReducer = (state, action) => {
             return { ...state };
     }
 };
-export default DeliverReducer;
+export default DeliveryUsersReducer;

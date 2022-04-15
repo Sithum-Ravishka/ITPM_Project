@@ -9,7 +9,7 @@ const INITIAL_STATE = {
 
 export const DeliveryUserContext = createContext(INITIAL_STATE);
 
-export const DeliverContextProvider = ({ children }) => {
+export const DeliveryUserContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(DeliveryUserReducer, INITIAL_STATE);
 
   return (
