@@ -27,7 +27,6 @@
 
       .contactDetails{
         display: flex;
-        background-color: red;
         flex-direction: column;
         margin-bottom: -85px;
         .name{
@@ -130,39 +129,36 @@
       
       .checkBox{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         margin-top: -355px;
         margin-bottom: 60px;  
         margin-left: 900px;
         border-radius: 10px;
         font-weight: bold;
 
-        .checkName{
-          margin-left: 10px;
-          margin-top: -3px;
+        .checkdev{
+          margin-bottom: 30px;
+          .checkName{
+            margin-left: 10px;
+            margin-top: -3px;
+          }
         }
-      }
-      .buttons{
         .save{
-           background-color: #FF6347;
-           width: 280px;
-           height: 75px;
-           border-radius: 5px;
-           margin-right: 800px;
-           margin-left: 840px;
-           margin-bottom: 62px;
-           font-weight: bold;
-           
-        }
-        .clear{
+          background-color: #FF6347;
           width: 280px;
           height: 75px;
           border-radius: 5px;
-          margin-right: 800px;
-          margin-left: 840px;
-          margin-bottom: 80px;
+          margin-bottom: 62px;
           font-weight: bold;
-        }
+          
+       }
+       .clear{
+         width: 280px;
+         height: 75px;
+         border-radius: 5px;
+         margin-bottom: 80px;
+         font-weight: bold;
+       }
       }
     }
-}
+  }
