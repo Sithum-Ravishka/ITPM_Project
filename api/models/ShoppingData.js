@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const ShippingDataSchema = new mongoose.Schema(
+const ShoppingDataSchema = new mongoose.Schema(
   {
    name: { type: String },
    contactNum: { type: Number },
@@ -13,4 +13,4 @@ const ShippingDataSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("SPdetails", ShippingDataSchema);
+module.exports = mongoose.model("ShoppingData", ShoppingDataSchema);

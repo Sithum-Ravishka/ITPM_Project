@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "./ShoppinCart.scss";
+import { createShoppingData } from "../../../context/shoppingDataContext/apiCalls";
+import { ShoppingDataContext } from "../../../context/shoppingDataContext/ShoppingDataContext";
 const ShoppingCart = () => {
   
+ 
+
+  const [shoppingdata, setShoppingData] = useState(null);
+
+
+  const { dispatch } = useContext(ShoppingDataContext);
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setShoppingData({ ...shoppingdata, [e.target.name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    createShoppingData(shoppingdata, dispatch);
+  };
   return (
     <div className="SPCContainer">
       <div className="SPCTitle">Add Shipping Information</div>
@@ -11,8 +29,8 @@ const ShoppingCart = () => {
         <div className="contactDetails">
           <span className="name">Contact Details</span>
           <div className="cd_input">
-            <input type="text" placeholder="Name*" />
-            <input type="text" placeholder="Contact Number*"/>
+            <input type="text" name="name" onChange={handleChange} placeholder="Name*" />
+            <input type="text" onChange={handleChange} placeholder="Contact Number*"/>
           </div>
 
           <div className="addrssDetails">
@@ -38,7 +56,7 @@ const ShoppingCart = () => {
 
             <div className="buttons">
               <Link to="/add-card-details">
-                <button className="save">Save</button>
+                <button className="save" onClick={handleSubmit}>Save</button>
               </Link>
               <button className="clear">Clear</button>
             </div>
