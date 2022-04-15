@@ -1,9 +1,8 @@
+import axios from "axios";
+import { useCallback, useEffect, useState } from "react";
 import { Button } from "../../components/button";
 import { Form } from "../../components/form";
 import { Input } from "../../components/input/index.";
-import { useForm } from "react-hook-form";
-import { useCallback, useEffect, useState } from "react";
-import axios from "axios";
 
 export const CategoriesForm = ({ defaultValues, onComplete }) => {
   const [name, setName] = useState(defaultValues ? defaultValues.name : "");
@@ -20,7 +19,7 @@ export const CategoriesForm = ({ defaultValues, onComplete }) => {
       setName("");
       setDescription("");
     }
-  }, [defaultValues]);
+  }, [defaultValues, setName, setDescription]);
 
   const onSubmit = useCallback(
     async (e) => {
