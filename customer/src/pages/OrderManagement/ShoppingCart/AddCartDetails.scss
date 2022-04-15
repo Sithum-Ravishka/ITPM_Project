@@ -1,4 +1,4 @@
-.SPCContainer {
+.CRDContainer {
     width: 1860px;
     height: 100%;
     min-height: 810px;
@@ -6,36 +6,53 @@
     margin: auto;
     border-radius: 20px;
     padding: 10px;
+
   
-    .SPCTitle{
+    .CRDTitle{
       font-size: 28px;
       font-weight: bold;
-      margin-left: 10px;
+      margin-left: 195px;
+      margin-right: 190px;
       margin-top: 10px;
       padding: 20px;
     }
 
 
     .S_content{
-      background-color:azure;
-      padding: 50px;
+      background-color:#e4e8e5;
+      width: 1250px;
+      padding: 100px;
+      margin-right: 900px;
+      margin-left: 210px;
 
       .contactDetails{
         display: flex;
+        background-color: red;
         flex-direction: column;
+        margin-bottom: -85px;
         .name{
           margin-left: 10px;
           font-weight: bold;
+          font-size: 22px;
+        }
+        .image{
+            display: flex;
+            flex-direction: column;
+            margin-top: -60px;
+            margin-left: 200px;
+            width: 250px;
+            height: 100px;
+            margin-bottom: 60px;
         }
 
         .cd_input{
           display: flex;
-          flex-direction: row;
+          flex-direction: column;
           padding: 10px;
-          padding-bottom: 45px;
+          padding-bottom: 1px;
 
           input{
-            width: 270px;
+            width: 510px;
             height: 40px;
             padding: 5px 15px;
             background-color: white;
@@ -44,65 +61,79 @@
             box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
             border-style: double;
             margin-right: 50px;
+            margin-bottom: 50px;
             border-radius: 5px;
           }
         }
-      }
-      .addrssDetails{
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-        margin-left: -10px;
-        .name{
-          margin-left: 10px;
-        }
-
-        .address_inputs{
+        .addrssDetails{
           display: flex;
-          flex-direction: row;
-          margin-bottom: 55px;
+          flex-direction: column;
           padding: 10px;
+          margin-left: -10px;
           
-
-          input{
-            width: 270px;
-            height: 40px;
-            padding: 5px 15px;
-            background-color: white;
-            color: gray;
-            font-size: 16px;
-            box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-            border-style: double;
-            margin-right: 50px;
-            border-radius: 5px;
+          .name{
+            margin-left: 10px;
           }
-
-        }
-        .adress_input2{
-          display: flex;
-          flex-direction: row;
-          margin-bottom: 60px;
-          padding: 10px;
-
-          input{
-            width: 270px;
-            height: 40px;
-            padding: 5px 15px;
-            background-color: white;
-            color: gray;
-            font-size: 16px;
-            box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-            border-style: double;
-            margin-right: 50px;
-            border-radius: 5px;
+  
+          .address_inputs{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 55px;
+            padding: 10px;
+            
+            
+            .dropdown{
+              width: 120px;
+              height: 53px;
+              border-radius: 5px;
+              padding: 10px;
+              margin-right: 90px;
+            }
+            
+  
+            input{
+              width: 100px;
+              height: 40px;
+              padding: 5px 15px;
+              background-color: white;
+              color: gray;
+              font-size: 16px;
+              box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+              border-style: double;
+              margin-right: 60px;
+              border-radius: 5px;
+            }
+  
+          }
+          .adress_input2{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 60px;
+            padding: 10px;
+  
+            input{
+              width: 270px;
+              height: 40px;
+              padding: 5px 15px;
+              background-color: white;
+              color: gray;
+              font-size: 16px;
+              box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+              border-style: double;
+              margin-right: 50px;
+              border-radius: 5px;
+            }
           }
         }
+
       }
+      
       .checkBox{
         display: flex;
         flex-direction: row;
+        margin-top: -355px;
         margin-bottom: 60px;  
-        margin-left: 10px;
+        margin-left: 900px;
         border-radius: 10px;
         font-weight: bold;
 
@@ -112,20 +143,24 @@
         }
       }
       .buttons{
-        
         .save{
            background-color: #FF6347;
-           width: 200px;
-           height: 50px;
+           width: 280px;
+           height: 75px;
            border-radius: 5px;
-           margin-right: 50px;
+           margin-right: 800px;
+           margin-left: 840px;
+           margin-bottom: 62px;
            font-weight: bold;
            
         }
         .clear{
-          width: 200px;
-          height: 50px;
+          width: 280px;
+          height: 75px;
           border-radius: 5px;
+          margin-right: 800px;
+          margin-left: 840px;
+          margin-bottom: 80px;
           font-weight: bold;
         }
       }

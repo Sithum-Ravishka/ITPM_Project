@@ -7,6 +7,8 @@ import DeliverLogin from './pages/DeliverManagement/DeliverLogin/DeliverLogin';
 import UsingIn from './pages/userManegment/UserSingIn/UsingIn';
 import ShoppingCart from './pages/OrderManagement/ShoppingCart/ShoppingCart';
 import UserProfile from './pages/userManegment/userProfile/UserProfile';
+import AddCardDetails from './pages/OrderManagement/ShoppingCart/AddCardDetails';
+
 
 
 function App() {
@@ -21,7 +23,9 @@ function App() {
         <Route path="/shoppingcart" element={<ShoppingCart />} />
         <Route path="/user-singin" element={<UsingIn/>} />
         <Route path="/user-profile" element={<UserProfile/>} />
-
+        <Route path="/add-card-details" element={<AddCardDetails/>} />
+        
+        
       </Routes>
       
     </BrowserRouter>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./ShoppinCart.scss";
 const ShoppingCart = () => {
   return (
@@ -35,7 +36,9 @@ const ShoppingCart = () => {
             </div>
 
             <div className="buttons">
-              <button className="save">Save</button>
+              <Link to="/add-card-details">
+                <button className="save">Save</button>
+              </Link>
               <button className="clear">Clear</button>
             </div>
           </div>
