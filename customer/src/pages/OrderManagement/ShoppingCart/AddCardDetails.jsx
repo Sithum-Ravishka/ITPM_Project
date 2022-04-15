@@ -60,20 +60,21 @@ const AddCardDetails = () => {
             </div>
 
             <div className="checkBox">
+              <div className="checkdev">
+
               <input type='checkbox'  />
               <span className="checkName">
                 Save Details
               </span>
-            </div>
-          </div>
-          
-        </div>
-
-        <div className="buttons">
+              </div>
+              
+              
               <button className="save">Save</button>
               <button className="clear">Clear</button>
+              
+            </div>
+          </div>
         </div>
-
       </div>
     </div>
   );

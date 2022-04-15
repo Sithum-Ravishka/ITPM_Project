@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./ShoppinCart.scss";
 const ShoppingCart = () => {
+  
   return (
     <div className="SPCContainer">
       <div className="SPCTitle">Add Shipping Information</div>
