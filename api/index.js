@@ -7,7 +7,7 @@ const userRoute = require("./routes/users");
 const deliverRoute = require("./routes/delivers");
 const categoryRoute = require("./routes/category"); 
 const deliverassignRoute = require("./routes/deliverassigns");
-const spRoute = require("./routes/SPcategory");
+const shoppingdataRoute = require("./routes/shoppingdatas");
 const deliveryuserRoute = require("./routes/deliveryuser");
 const cors = require("cors");
 
@@ -31,7 +31,7 @@ app.use("/api/users", userRoute);
 app.use("/api/delivers", deliverRoute);
 app.use("/api/categories", categoryRoute);
 app.use("/api/deliverassigns", deliverassignRoute);
-app.use("/api/SPcategory", spRoute);
+app.use("/api/shoppingdatas", shoppingdataRoute);
 app.use("/api/deliveryuser", deliveryuserRoute);
 
 
