@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const DeliverSchema = new mongoose.Schema(
+const DeliverAssignSchema = new mongoose.Schema(
   {
     customerName: { type: String },
     address: { type: String },
@@ -12,8 +12,12 @@ const DeliverSchema = new mongoose.Schema(
     pricePerUnit: { type: String },
     Quantity: { type: String },
     totalPrice: { type: String },
+    deliverName: { type: String },
+    deliverNIC: { type: String },
+    vechicleNo: { type: String },
+    deliveryDate: { type: String },
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Deliver", DeliverSchema);
+module.exports = mongoose.model("DeliverAssign", DeliverAssignSchema);

@@ -1,30 +1,13 @@
 import React from "react";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./deliverAssign.scss";
 import profile from "./profile.jpg";
 import product from "./product.webp";
-import { useContext } from "react";
-import { DeliverContext } from "../../../context/deliverContext/DeliverContext";
-import { useState } from "react";
 
 export default function DeliverAssign() {
-  const Navigate = useNavigate();
-  const deliver = Navigate.deliver;
+  const location = useLocation();
+  const deliver = location.deliver;
 
-  const [updatedeliver, setUpdateDeliver] = useState(null);
-  
-  const { dispatch } = useContext(DeliverContext);
-
-
-  const handleChange = (e) => {
-    const value = e.target.value;
-    setUpdateDeliver({ ...updatedeliver, [e.target.name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    updatedeliver(updatedeliver, dispatch);
-  };
 
   return (
     <div className="dAContainer">
@@ -42,24 +25,24 @@ export default function DeliverAssign() {
             </div>
             <div className="dAInfo">
               <div className="dRInfobox">
-                <span className="dAspan">{deliver.customerName}</span>
-                <input placeholder="Sithum Ravishka" disabled />
+                <span className="dAspan">Customer Name :</span>
+                <input placeholder={deliver.customerName} value={deliver.customerName} disabled />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Address :</span>
                 <textarea
-                  placeholder="No: 22, daramapalagama, iddagoda, mathugma, kaluthra, watersn province, Sri lanka."
+                  placeholder={deliver.address}
                   disabled
                   className="dAInputAddress"
                 />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Zip Code :</span>
-                <input placeholder="12100" disabled />
+                <input placeholder={deliver.zipCode} disabled />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Mobile :</span>
-                <input placeholder="076-8367257" disabled />
+                <input placeholder={deliver.mobile} disabled />
               </div>
             </div>
           </div>
@@ -105,13 +88,13 @@ export default function DeliverAssign() {
         <div className="dAsectionRight">
           <div className="dAProductDetails">
             <div className="dATI">
-              <img src={product} alt="" className="dAProImg" />
+              <img src={deliver.productImg} alt="" className="dAProImg" />
               <span className="dACTitle">Product Information</span>
             </div>
             <div className="dAInfo">
               <div className="dRInfobox">
                 <span className="dAspan">Product Name :</span>
-                <input placeholder="Lay's Potato Chips" disabled />
+                <input placeholder={deliver.productName} disabled />
               </div>
               <span>.</span>
               <div className="dRInfobox">
@@ -119,19 +102,19 @@ export default function DeliverAssign() {
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Payment Method :</span>
-                <input placeholder="Cash on delivery" disabled />
+                <input placeholder={deliver.paymentMethod} disabled />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Price Per Unit :</span>
-                <input placeholder="Rs.300.00" disabled />
+                <input placeholder={deliver.pricePerUnit} disabled />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Quantity :</span>
-                <input placeholder="12" disabled />
+                <input placeholder={deliver.Quantity} disabled />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Total Price :</span>
-                <input placeholder="Rs.6000.00" disabled />
+                <input placeholder={deliver.totalPrice} disabled />
               </div>
             </div>
           </div>

@@ -21,11 +21,6 @@ export default function DeliveryOrderList() {
       width: 120,
     },
     {
-      field: "deliver",
-      headerName: "Deliver",
-      width: 10,
-    },
-    {
       field: "customerName",
       headerName: "Custormer Name",
       width: 200,
