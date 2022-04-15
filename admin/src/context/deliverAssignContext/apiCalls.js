@@ -6,25 +6,25 @@ import {
   deleteDeliverAssignFailure,
   deleteDeliverAssignStart,
   deleteDeliverAssignSuccess,
-  getDeliversAssignFailure,
-  getDeliversAssignStart,
-  getDeliversAssignSuccess,
+  getDeliverAssingsFailure,
+  getDeliverAssingsStart,
+  getDeliverAssingsSuccess,
   updateDeliverAssignFailure,
   updateDeliverAssignStart,
   updateDeliverAssignSuccess,
-} from "./DeliverActions";
+} from "./DeliverAssignActions";
 
-export const getDeliversAssign = async (dispatch) => {
-    dispatch(getDeliversAssignStart());
+export const getDeliverAssings = async (dispatch) => {
+    dispatch(getDeliverAssingsStart());
     try {
       const res = await axios.get("/deliverassigns" , {
         headers: {
           token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
         },
       });
-      dispatch(getDeliversAssignSuccess(res.data));
+      dispatch(getDeliverAssingsSuccess(res.data));
     } catch (err) {
-      dispatch(getDeliversAssignFailure());
+      dispatch(getDeliverAssingsFailure());
     }
 };
 

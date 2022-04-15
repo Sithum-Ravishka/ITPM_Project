@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./deliverAssign.scss";
 import profile from "./profile.jpg";
 import product from "./product.webp";
+import { createDeliverAssign } from "../../../context/deliverAssignContext/apiCalls";
+import { DeliverAssignContext } from "../../../context/deliverAssignContext/DeliverAssignContext";
 
 export default function DeliverAssign() {
   const location = useLocation();
   const deliver = location.deliver;
 
+  const [deliverassign, setDeliverAssign] = useState(null);
+
+
+  const { dispatch } = useContext(DeliverAssignContext);
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setDeliverAssign({ ...deliverassign, [e.target.name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    createDeliverAssign(deliverassign, dispatch);
+  };
 
   return (
     <div className="dAContainer">
@@ -42,7 +58,7 @@ export default function DeliverAssign() {
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Mobile :</span>
-                <input placeholder={deliver.mobile} disabled />
+                <input placeholder={deliver.mobile} name="mobile" value={deliver.mobile} onChange={handleChange} />
               </div>
             </div>
           </div>
@@ -58,6 +74,8 @@ export default function DeliverAssign() {
                 type="text"
                 placeholder="Enter Deliver Name"
                 className="dRinput"
+                name="deliverName"
+                onChange={handleChange}
                 required
               />
             </div>
@@ -67,6 +85,8 @@ export default function DeliverAssign() {
                 type="text"
                 placeholder="Enter Deliver NIC"
                 className="dRinput"
+                name="deliverNIC"
+                onChange={handleChange}
                 required
               />
             </div>
@@ -76,19 +96,21 @@ export default function DeliverAssign() {
                 type="text"
                 placeholder="Enter Vechicle No"
                 className="dRinput"
+                name="vechicleNo"
+                onChange={handleChange}
                 required
               />
             </div>
             <div className="dRInputBox">
               <label className="dRLableName">Delivery Date :</label>
-              <input type="date" className="dRinput" required />
+              <input type="date" className="dRinput" name="deliveryDate" onChange={handleChange} required />
             </div>
           </div>
         </div>
         <div className="dAsectionRight">
           <div className="dAProductDetails">
             <div className="dATI">
-              <img src={deliver.productImg} alt="" className="dAProImg" />
+              <img src={deliver.productImg || product} alt="" className="dAProImg" />
               <span className="dACTitle">Product Information</span>
             </div>
             <div className="dAInfo">
@@ -119,7 +141,7 @@ export default function DeliverAssign() {
             </div>
           </div>
           <div className="dABtn">
-            <button>ASSIGN TO DELIVER</button>
+            <button type="submit" onClick={handleSubmit}>ASSIGN TO DELIVER</button>
           </div>
         </div>
       </div>
