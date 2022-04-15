@@ -1,52 +1,52 @@
-.dAssignSm{
-    width: 340px;
+.dAssignSm {
+    width: 320px;
     height: auto;
     box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
     padding: 20px 20px 10px 20px;
     margin: 20px;
     background-color: white;
 
-    .dAssignSmTitle{
+    .dAssignSmTitle {
         font-size: 19px;
         font-weight: 700;
         color: rgb(0, 0, 107);
     }
 
-    .dAssignSmSeeAll{
+    .dAssignSmSeeAll {
         font-size: 13px;
         font-weight: 600;
         color: rgb(0, 0, 0);
-        margin-left: 80px;
+        margin-left: 50px;
         cursor: pointer;
     }
 
-    .dAssignSmList{
+    .dAssignSmList {
         margin-left: 15px;
         padding: 0;
         list-style: none;
 
-        .dAssignSmListItem{
+        .dAssignSmListItem {
             display: flex;
             align-items: center;
             margin: 20px 0px;
 
-            .dAssignSmProImg{
+            .dAssignSmProImg {
                 width: 40px;
                 height: 40px;
                 border-radius: 10px 0px 10px 0px;
                 object-fit: cover;
             }
 
-            .dAssignSmProduct{
+            .dAssignSmProduct {
                 display: flex;
                 flex-direction: column;
 
-                .dAssignSmProductname{
+                .dAssignSmProductname {
                     font-size: 16px;
                     font-weight: 600;
                     margin-left: 15px;
-                } 
+                }
             }
-        }  
+        }
     }
 }

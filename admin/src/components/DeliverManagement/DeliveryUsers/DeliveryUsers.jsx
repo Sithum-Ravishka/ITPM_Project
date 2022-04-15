@@ -5,7 +5,7 @@ import "./deliveryUsers.scss"
 export default function DeliveryUsers() {
   return (
     <div className="deliverSm">
-      <span className="deliverSmTitle">Recent Join Delivers</span>
+      <span className="deliverSmTitle">Recent Join Delivery Users</span>
       <span className="deliverSmSeeAll">See All {'>>'}</span>
       <ul className="deliverSmList">
           <li className="deliverSmListItem">

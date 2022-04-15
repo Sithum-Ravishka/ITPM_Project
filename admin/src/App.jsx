@@ -10,6 +10,7 @@ import DeliveryOrderList from "./pages/DeliverManagement/DeliveryOrderList/Deliv
 import DeliverAssign from "./pages/DeliverManagement/DeliverAssign/DeliverAssign";
 import Categories from "./pages/category/categories";
 import Login from "./pages/login/Login";
+import DeliveryAssignList from "./pages/DeliverManagement/DeliveryAssignList/DeliveryAssignList";
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
         <Route path="/deliver-register">
           <DeliverRegister />
         </Route>
-        <Route path="/deliveries">
+        <Route path="/delivers">
           <DeliveryOrderList />
         </Route>
         <Route path="/deliver/:deliverId">
@@ -41,6 +42,9 @@ function App() {
         </Route>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/delivery-assign-List">
+          <DeliveryAssignList />
         </Route>
       </Switch>
     </Router>

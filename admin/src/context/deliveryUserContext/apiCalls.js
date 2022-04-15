@@ -9,17 +9,17 @@ import {
 } from "./DeliveryUserActions";
 
 export const getDeliversUser = async (dispatch) => {
-    dispatch(getDeliveryUsersStart());
-    try {
-      const res = await axios.get("/deliveryusers" , {
-        headers: {
-          token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
-        },
-      });
-      dispatch(getDeliveryUsersSuccess(res.data));
-    } catch (err) {
-      dispatch(getDeliveryUsersFailure());
-    }
+  dispatch(getDeliveryUsersStart());
+  try {
+    const res = await axios.get("/deliveryusers", {
+      headers: {
+        token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+      },
+    });
+    dispatch(getDeliveryUsersSuccess(res.data));
+  } catch (err) {
+    dispatch(getDeliveryUsersFailure());
+  }
 };
 
 //create

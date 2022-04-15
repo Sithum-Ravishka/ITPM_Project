@@ -1,0 +1,49 @@
+.dordersContainer {
+    width: 1260px;
+    height: 100%;
+    min-height: 680px;
+    background-color: rgb(255, 255, 255);
+    margin-left: 250px;
+    border-radius: 0px 0px 20px 20px;
+    padding-bottom: 20px;
+
+    .dRHeader {
+        margin-top: -60px;
+
+        .link {
+            text-decoration: none;
+        }
+
+        .dRMTitle {
+            font-size: 28px;
+            color: rgb(15, 0, 102);
+            margin-top: 15px;
+            font-weight: bold;
+            margin-left: 400px;
+
+        }
+    }
+
+    .dOrdersListAssign {
+        border-style: double;
+        border-color: rgb(218, 218, 218);
+        border-radius: 10px;
+        padding: 5px 10px;
+        background-color: hsl(229, 100%, 61%);
+        color: white;
+        cursor: pointer;
+        margin-right: 20px;
+    }
+
+    .dOrdersList {
+        width: 1220px;
+        height: 650px;
+        margin-left: 20px;
+        margin-top: 20px;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .assignDelete{
+        color: red;
+    }
+}

@@ -38,19 +38,20 @@ const navItems = [
   },
   {
     name: "Deliveries",
-    link: "/deliveries",
+    link: "/deliver-home",
     icon: MdDeliveryDining,
   },
 ];
 
 const NavItem = styled.div`
-  padding: 8px;
+  padding: 12px;
   font-size: 20px;
   width: inherit;
   color: white;
+  margin-bottom: 15px;
   cursor: pointer;
   ${({ active }) =>
-    active ? "background-color: white;color: black;font-weight: bold;" : ""}
+    active ? "background-color: white;color: black;font-weight: bold; margin-left: 8px; border-radius: 10px 0px 0px 10px;  " : ""}
 `;
 
 export default function Sidebar() {
@@ -79,6 +80,7 @@ export default function Sidebar() {
             >
               <Grid
                 gridAutoFlow="column"
+                marginLeft="20px"
                 gridGap="8px"
                 justifyContent="start"
                 alignItems="center"
