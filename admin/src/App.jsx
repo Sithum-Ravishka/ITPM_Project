@@ -9,6 +9,7 @@ import Topbar from "./components/topbar/Topbar";
 import DeliveryOrderList from "./pages/DeliverManagement/DeliveryOrderList/DeliveryOrderList";
 import DeliverAssign from "./pages/DeliverManagement/DeliverAssign/DeliverAssign";
 import Categories from "./pages/category/categories";
+import Login from "./pages/login/Login";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/delivers"><DeliveryOrderList /></Route>
         <Route path="/deliver/:deliverId"><DeliverAssign/></Route> 
         <Route path="/categories"><Categories /></Route>
+        <Route path="/login"><Login /></Route>
 
       </Switch>
     </Router>
