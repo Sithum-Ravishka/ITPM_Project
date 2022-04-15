@@ -1,69 +1,86 @@
-import React from 'react'
-import {
-    ShoppingBasket,
-    AccountCircle,
-} from "@material-ui/icons";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import { Grid } from "../grid";
+import logo from "./logo.png";
 import "./topbar.scss";
-import logo from './logo.png';
 
-export default function Topbar({setShow, size}) {
-    
-    return (
-        <div className="topbar">
-            <ul className="topbarList">
-                <div className='topbarLeft'>
-                    <Link to="/" className="link">
-                        <div className="topbarListlogo">
-                            <img component={Link} to="/" src={logo} alt="Logo" className="logo" />
-                        </div>
-                    </Link>
-                </div>
-                <div className='topbarRight'>
-                    <Link to="/" className="link">
-                        <li className="topbarListItem">
-                            Home
-                        </li>
-                    </Link>
-                    <Link to="/" className="link">
-                        <li className="topbarListItem">
-                            Product
-                        </li>
-                    </Link>
-                    <Link to="/about" className="link">
-                        <li className="topbarListItem">
-                            About
-                        </li>
-                    </Link>
-                    <Link to="/contact" className="link">
-                        <li className="topbarListItem">
-                            Contact
-                        </li>
-                    </Link>
-                    <Link to="/user-singin" className="link">
-                        <li className="topbarListItem active">
-                            Sign In
-                        </li>
-                    </Link>
-                    <Link to="/shoppingcart" className="link">
-                        <li className="topbarListItem ">
-                            <span>
-                                <div className="cart" onClick={()=>setShow(false)}>
-                                <span>
-                                    <i className="fas fa-cart-plus"></i>
-                                </span>
-                                <span>{size}</span>
-                                </div>
-                            </span>
-                        </li>
-                    </Link>
-                    <Link to="/user-profile" className="link">
-                        <li className="topbarListItem ">
-                            <AccountCircle className="topbarIcon" />
-                        </li>
-                    </Link>
-                </div>
-            </ul>
-        </div>
-    )
+const NavItem = styled.div`
+  padding: 8px;
+  font-size: 20px;
+  text-align: center;
+  width: max-content;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  color: white;
+  ${({ active }) =>
+    active ? "background-color: white;color: black;font-weight: bold;" : ""}
+  :hover {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+  }
+`;
+
+const BrandWrapper = styled.div`
+  padding: 8px;
+`;
+
+const navItems = [
+  {
+    name: "Home",
+    link: "/",
+  },
+  {
+    name: "Products",
+    link: "/products",
+  },
+  {
+    name: "Cart",
+    link: "/cart",
+  },
+
+  {
+    name: "Login",
+    link: "/login",
+  },
+];
+
+export default function Topbar() {
+  const navigate = useNavigate();
+  const [activeMenu, setActiveMenu] = useState("Home");
+  const location = useLocation();
+
+  useEffect(() => {
+    const navItem = navItems.find(({ link }) => link === location.pathname);
+    if (navItem) setActiveMenu(navItem.name);
+  }, [location.pathname, setActiveMenu]);
+
+  return (
+    <Grid gridAutoFlow="column">
+      <BrandWrapper>
+        <img width="150px" src={logo} alt="Logo" />
+      </BrandWrapper>
+      <Grid
+        gridAutoFlow="column"
+        justifyContent="right"
+        gridGap="16px"
+        alignItems="flex-end"
+        mr="32px"
+      >
+        {navItems.map(({ name, link }) => (
+          <NavItem
+            active={activeMenu === name}
+            key={name}
+            onClick={() => {
+              setActiveMenu(name);
+              navigate(link);
+            }}
+          >
+            {name}
+          </NavItem>
+        ))}
+      </Grid>
+    </Grid>
+  );
 }
