@@ -1,123 +1,102 @@
 .ULContainer {
-    width: 1860px;
-    height: 100%;
-    min-height: 810px;
+  width: 1860px;
+  height: 100%;
+  min-height: 810px;
+  background-color: white;
+  margin: auto;
+  border-radius: 20px;
+  padding: 10px;
+
+  .ulTitle {
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 20px;
+  }
+
+  .UIContent {
+    display: flex;
+    flex-direction: row;
     background-color: white;
-    margin: auto;
-    border-radius: 20px;
-    padding: 10px;
-  
-    .ulTitle{
-      font-size: 28px;
-      font-weight: bold;
-      margin-left: 10px;
-      margin-top: 10px;
-      padding: 20px;
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+
+    .ULleft {
+      .Ulimg {
+        img {
+          width: 1000px;
+          height: 900px;
+        }
+      }
     }
 
-    .UIContent{
+    .ULright {
+      display: flex;
+      flex-direction: column;
 
+      .SInTitel {
+        font-size: 50px;
+        font-weight: bold;
+        margin-left: 350px;
+        margin-top: 80px;
+        padding: 20px;
+        font-family: "Times New Roman";
+      }
+
+      .MIbox {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         background-color: white;
+        padding: 80px;
+        font-family: "Georgia";
+        font-size: 24px;
+        margin-left: 200px;
+        margin-top: 50px;
         box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
 
-        .ULleft{ 
-            .Ulimg{
-
-                img{
-                    width: 1000px;
-                    height:900px;
-                }
-            }
-
+        .ABC {
+          margin-top: 30px;
         }
 
-        .ULright{
-            
-            display: flex;
-            flex-direction: column;
-
-
-            .SInTitel{
-                
-                font-size: 50px;
-                font-weight: bold;
-                margin-left: 350px;
-                margin-top: 80px;
-                padding: 20px;
-                font-family: 'Times New Roman';
-            }
-
-            .MIbox{
-                display: flex;
-                flex-direction: column;
-                background-color: white;
-                padding: 80px;
-                font-family: 'Georgia';
-                font-size: 24px;
-                margin-left: 200px;
-                margin-top: 50px;
-                box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-                
-                .ABC{
-                    margin-top: 30px;
-
-                }
-
-                .BTN{
-
-                    margin-top: 30px;
-                    font-family: 'Georgia';
-                    font-size: 24px;
-                    color: white;
-                    background-color: rgb(0, 153, 13);
-                    width: 150px;
-                    height: 40px;
-                    padding: 5px 15px;
-                    margin-left: 100px;
-                    cursor: pointer;
-
-                }
-
-                .Up{
-
-                    margin-top: 30px;
-                    margin-left: 30px;
-
-                }
-
-                .UpS{
-                    font-family: 'Georgia';
-                    font-size: 26px;
-                    color: #1006A5;
-                    background-color: inherit;
-                    cursor: pointer;
-                    
-                }
-
-
-                 input{
-                    width: 330px;
-                    height: 40px;
-                    padding: 5px 15px;
-                    background-color: white;
-                    color: gray;
-                    font-size: 16px;
-                    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-                    border-style: double;
-                    margin-right: 50px;
-                    margin-top: 20px;
-
-                
-
-
-                 
-            
-                    
-                 }
-            }
-            
+        .BTN {
+          margin-top: 30px;
+          font-family: "Georgia";
+          font-size: 24px;
+          color: white;
+          background-color: rgb(0, 153, 13);
+          width: 150px;
+          height: 40px;
+          padding: 5px 15px;
+          margin-left: 100px;
+          cursor: pointer;
         }
+
+        .Up {
+          margin-top: 30px;
+          margin-left: 30px;
+        }
+
+        .UpS {
+          font-family: "Georgia";
+          font-size: 26px;
+          color: #1006a5;
+          background-color: inherit;
+          cursor: pointer;
+        }
+
+        input {
+          width: 330px;
+          height: 40px;
+          padding: 5px 15px;
+          background-color: white;
+          color: gray;
+          font-size: 16px;
+          box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+          border-style: double;
+          margin-right: 50px;
+          margin-top: 20px;
+        }
+      }
     }
+  }
 }

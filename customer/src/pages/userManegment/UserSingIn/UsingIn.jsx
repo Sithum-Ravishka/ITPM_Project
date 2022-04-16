@@ -3,6 +3,7 @@ import React from "react";
 import "./UsingIn.scss";
 
 import singin from './singin.webp'
+import { Link } from "react-router-dom";
 
 export default function UsingIn() {
   return (
@@ -28,7 +29,7 @@ export default function UsingIn() {
 
            <button className="BTN">Login</button>
 
-           <span className="Up">If You Not Register ? <span className="UpS">SING UP</span> </span>
+           <span className="Up">If You Not Register ? <Link to="/user-register"> <span className="UpS">SING UP</span></Link> </span>
 
           </div>
 
