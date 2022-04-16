@@ -9,6 +9,7 @@ import ShoppingCart from "./pages/OrderManagement/ShoppingCart/ShoppingCart";
 import UserProfile from "./pages/userManegment/userProfile/UserProfile";
 import AddCardDetails from "./pages/OrderManagement/ShoppingCart/AddCardDetails";
 import OrderSuccess from './pages/OrderManagement/ShoppingCart/OrderSuccess'
+import UserRegister from "./pages/userManegment/UserRegister/UserRegister";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/Order-success" element={<OrderSuccess/>} />
         <Route path="/login" exact element={<DeliverLogin />} />
         <Route path="/cart" element={<ShoppingCart />} />
+        <Route path="/user-register" element={<UserRegister />} />
       </Routes>
     </BrowserRouter>
   );
