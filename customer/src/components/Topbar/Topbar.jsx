@@ -42,7 +42,7 @@ const navItems = [
 
   {
     name: "Login",
-    link: "/login",
+    link: "/user-singin",
   },
 ];
 
