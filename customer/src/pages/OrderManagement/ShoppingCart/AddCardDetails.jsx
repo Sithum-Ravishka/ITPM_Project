@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import './AddCartDetails.scss';
 import cardLogo from './CreditCards.png';
+import { createCardData } from "../../../context/cardDataContext/apiCalls";
+import { CardDataContext } from "../../../context/cardDataContext/CardDataContext";
+import { useNavigate } from "react-router-dom";
 
 const AddCardDetails = () => {
+  const navigate = useNavigate();
+
+  const [carddata, setCardData] = useState(null);
+
+
+  const { dispatch } = useContext(CardDataContext);
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setCardData({ ...carddata, [e.target.name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    createCardData(carddata, dispatch);
+    navigate("/Order-success");
+  };
   return (
     <div className="CRDContainer">
+      <form>
       <div className="CRDTitle">Add Card Details</div>
 
       <div className="S_content">
@@ -13,15 +34,15 @@ const AddCardDetails = () => {
           <img className='image' src={cardLogo} alt="BigCo Inc. logo"/>
           
           <div className="cd_input">
-            <input type="text" placeholder="Name*" />
-            <input type="text" placeholder="Name*" />
+            <input type="text" name="name" onChange={handleChange} placeholder="Name*" />
+            <input type="text" placeholder="Card Number*" />
           </div>
 
           <div className="addrssDetails">
             <span className="name"></span>
 
             <div className="address_inputs">
-              <select className="dropdown">
+              <select className="dropdown" >
                   <option>Select</option>
                   <option>1</option>
                   <option>2</option>
@@ -69,13 +90,14 @@ const AddCardDetails = () => {
               </div>
               
               
-              <button className="save">Save</button>
+              <button className="save" onClick={handleSubmit} >Save and Confirm</button>
               <button className="clear">Clear</button>
               
             </div>
           </div>
         </div>
       </div>
+      </form>
     </div>
   );
 };

@@ -1,0 +1,57 @@
+.ORDContainer {
+    width: 1860px;
+    height: 100%;
+    min-height: 810px;
+    background-color: white;
+    margin: auto;
+    border-radius: 20px;
+    padding: 10px;
+
+    .S_content{
+        background-color:#e4e8e5;
+        width: 1100px;
+        height: 550px;
+        padding: 100px;
+        margin-right: 950px;
+        margin-left: 250px;
+        border-radius: 15px;
+        margin-top: 30px;
+        
+
+        .image{
+            width:250px;
+            margin-left: 420px;
+            margin-top: 30px;
+            border-radius: 360px;
+        }
+        .orderSUCCESS{
+            font-size: 45px;
+            margin-left: 380px;
+        }
+        .orderID{
+            margin-top: 10px;
+            font-size: 25px;
+            margin-left: 410px;
+            padding: 15px;  
+        }
+        .orderThankyou{
+            font-size: 25px;
+            margin-left: 320px;
+            padding: 15px;
+            color:  #6a6c6d;
+        }
+        .btn{
+            padding: 20px;
+            width: 250px;
+            height: 60px;
+            color: black;
+            font-size: 18px;
+            background-color: #32CD32;
+            padding: 20px;
+            margin-left: 430px;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+    }
+    
+}

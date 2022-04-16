@@ -4,13 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ShoppingDataContextProvider } from './context/shoppingDataContext/ShoppingDataContext';
+import { CardDataContextProvider } from './context/cardDataContext/CardDataContext';
+
 
 ReactDOM.render(
   <React.StrictMode>
     <ShoppingDataContextProvider>
-
-   
-      <App />
+      <CardDataContextProvider>
+        <App />
+      </CardDataContextProvider>
     </ShoppingDataContextProvider>
   </React.StrictMode>,
   document.getElementById('root')

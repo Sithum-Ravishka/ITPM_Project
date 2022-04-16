@@ -10,7 +10,7 @@
     .SPCTitle{
       font-size: 28px;
       font-weight: bold;
-      margin-left: 10px;
+      margin-left: 235px;
       margin-top: 10px;
       padding: 20px;
     }
@@ -19,6 +19,9 @@
     .S_content{
       background-color:#e4e8e5;
       padding: 50px;
+      width: 1300px;
+      margin-left: 250px;
+      border-radius: 15px;
 
       .contactDetails{
         display: flex;
@@ -127,6 +130,7 @@
           height: 50px;
           border-radius: 5px;
           font-weight: bold;
+          cursor: pointer;
         }
       }
     }
