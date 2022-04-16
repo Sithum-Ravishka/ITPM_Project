@@ -1,77 +1,97 @@
-import {
-  Report,
-  Store,
-  ListAlt,
-  LocalGroceryStore,
-  Person,
-  LocalShipping,
-} from "@material-ui/icons";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { BiCategory } from "react-icons/bi";
+import { BsFillStickiesFill } from "react-icons/bs";
+import { GoDashboard } from "react-icons/go";
+import { HiUsers } from "react-icons/hi";
+import { MdDeliveryDining, MdInventory } from "react-icons/md";
+import { useHistory, useLocation } from "react-router-dom";
+import styled from "styled-components";
+import { Grid } from "../grid";
 import "./sidebar.scss";
-import logo from "./logo.png";
+
+const navItems = [
+  {
+    name: "Dashboard",
+    link: "/dashboard",
+    icon: GoDashboard,
+  },
+  {
+    name: "Customers",
+    link: "/customers",
+    icon: HiUsers,
+  },
+  {
+    name: "Products",
+    link: "/products",
+    icon: MdInventory,
+  },
+
+  {
+    name: "Categories",
+    link: "/categories",
+    icon: BiCategory,
+  },
+  {
+    name: "Orders",
+    link: "/orders",
+    icon: BsFillStickiesFill,
+  },
+  {
+    name: "Deliveries",
+    link: "/deliver-home",
+    icon: MdDeliveryDining,
+  },
+];
+
+const NavItem = styled.div`
+  padding: 12px;
+  font-size: 20px;
+  width: inherit;
+  color: white;
+  margin-bottom: 15px;
+  cursor: pointer;
+  ${({ active }) =>
+    active ? "background-color: white;color: black;font-weight: bold; margin-left: 8px; border-radius: 10px 0px 0px 10px;  " : ""}
+`;
 
 export default function Sidebar() {
+  const history = useHistory();
+  const [activeMenu, setActiveMenu] = useState("Home");
+  const location = useLocation();
+
+  useEffect(() => {
+    const navItem = navItems.find(({ link }) => link === location.pathname);
+    if (navItem) setActiveMenu(navItem.name);
+  }, [location.pathname, setActiveMenu]);
   return (
-    <div className="sidebar">
-      <div className="sidebarWrapper">
-        <div className="sidebarMenu">
-          <ul className="sidebarList">
-            <Link to="/" className="link">
-              <div className="sidebarListlogo">
-                <img
-                  component={Link}
-                  to="/"
-                  src={logo}
-                  alt="Logo"
-                  className="logo"
-                />
-              </div>
-            </Link>
-            <Link to="/" className="link">
-              <li className="sidebarListItem">
-                <Store className="sidebarIcon" />
-                Dashboard
-              </li>
-            </Link>
-            <Link to="/" className="link">
-              <li className="sidebarListItem">
-                <ListAlt className="sidebarIcon" />
-                Customer Management
-              </li>
-            </Link>
-            <Link to="/" className="link">
-              <li className="sidebarListItem">
-                <LocalGroceryStore className="sidebarIcon" />
-                Products Management
-              </li>
-            </Link>
-            <Link to="/categories" className="link">
-              <li className="sidebarListItem">
-                <LocalGroceryStore className="sidebarIcon" />
-                Category Management
-              </li>
-            </Link>
-            <Link to="/" className="link">
-              <li className="sidebarListItem">
-                <Person className="sidebarIcon" />
-                Order Management
-              </li>
-            </Link>
-            <Link to="/deliver-home" className="link">
-              <li className="sidebarListItem active">
-                <LocalShipping className="sidebarIcon" />
-                Deliver Management
-              </li>
-            </Link>
-            <Link to="/" className="link">
-              <li className="sidebarListItem">
-                <Report className="sidebarIcon" />
-                Reports
-              </li>
-            </Link>
-          </ul>
-        </div>
-      </div>
+    <div>
+      <h1 style={{ padding: 8, color: "white" }}>Grocery Store</h1>
+      <Grid>
+        {navItems.map(({ name, link, icon: Icon }) => {
+          const active = activeMenu === name;
+          return (
+            <NavItem
+              active={active}
+              key={name}
+              onClick={() => {
+                setActiveMenu(name);
+                history.push(link);
+              }}
+            >
+              <Grid
+                gridAutoFlow="column"
+                marginLeft="20px"
+                gridGap="8px"
+                justifyContent="start"
+                alignItems="center"
+              >
+                {Icon && <Icon color={active ? "black" : "white"} />}
+                {name}
+              </Grid>
+            </NavItem>
+          );
+        })}
+      </Grid>
     </div>
   );
 }

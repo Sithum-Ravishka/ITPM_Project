@@ -6,13 +6,16 @@ import reportWebVitals from './reportWebVitals';
 import { DeliverContextProvider } from './context/deliverContext/DeliverContext';
 import { AuthContextProvider } from './context/authContext/AuthContext';
 import { DeliverAssignContextProvider } from './context/deliverAssignContext/DeliverAssignContext';
+import { DeliveryUserContextProvider } from './context/deliveryUserContext/DeliveryUserContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <AuthContextProvider>
       <DeliverContextProvider>
         <DeliverAssignContextProvider>
-          <App />
+          <DeliveryUserContextProvider>
+            <App />
+          </DeliveryUserContextProvider>
         </DeliverAssignContextProvider>
       </DeliverContextProvider>
     </AuthContextProvider>

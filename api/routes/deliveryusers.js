@@ -5,15 +5,9 @@ const verify = require("../verifyToken");
 
 //CREATE
 
-router.post("/deliverregister", verify, async (req, res) => {
+router.post("/", verify, async (req, res) => {
   if (req.user.isAdmin) {
-    const newDeliveryUser = new DeliveryUser({
-
-        password: CryptoJS.AES.encrypt(
-        req.body.password,
-        process.env.SECRET_KEY
-    ).toString(),
-});
+    const newDeliveryUser = new DeliveryUser(req.body);
 
 
     try {

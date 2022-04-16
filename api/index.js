@@ -10,6 +10,7 @@ const deliverassignRoute = require("./routes/deliverassigns");
 const shoppingdataRoute = require("./routes/shoppingdatas");
 const deliveryuserRoute = require("./routes/deliveryuser");
 const carddataRoute = require("./routes/carddatas");
+const deliveryuserRoute = require("./routes/deliveryusers");
 const cors = require("cors");
 
 dotenv.config();
@@ -33,8 +34,12 @@ app.use("/api/delivers", deliverRoute);
 app.use("/api/categories", categoryRoute);
 app.use("/api/deliverassigns", deliverassignRoute);
 app.use("/api/shoppingdatas", shoppingdataRoute);
+<<<<<<< HEAD
 app.use("/api/deliveryuser", deliveryuserRoute);
 app.use("/api/carddatas", carddataRoute);
+=======
+app.use("/api/deliveryusers", deliveryuserRoute);
+>>>>>>> 1fdad108585ed01e8459afd3dc2fcd1c54e5aeea
 
 
 app.listen(8800, () => {

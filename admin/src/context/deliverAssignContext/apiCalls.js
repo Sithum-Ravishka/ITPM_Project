@@ -15,17 +15,17 @@ import {
 } from "./DeliverAssignActions";
 
 export const getDeliverAssings = async (dispatch) => {
-    dispatch(getDeliverAssingsStart());
-    try {
-      const res = await axios.get("/deliverassigns" , {
-        headers: {
-          token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
-        },
-      });
-      dispatch(getDeliverAssingsSuccess(res.data));
-    } catch (err) {
-      dispatch(getDeliverAssingsFailure());
-    }
+  dispatch(getDeliverAssingsStart());
+  try {
+    const res = await axios.get("/deliverassigns", {
+      headers: {
+        token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+      },
+    });
+    dispatch(getDeliverAssingsSuccess(res.data));
+  } catch (err) {
+    dispatch(getDeliverAssingsFailure());
+  }
 };
 
 //create
@@ -72,4 +72,3 @@ export const updateDeliverAssign = async (id, dispatch) => {
     dispatch(updateDeliverAssignFailure());
   }
 };
-

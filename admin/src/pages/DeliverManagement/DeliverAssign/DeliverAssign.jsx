@@ -12,7 +12,6 @@ export default function DeliverAssign() {
 
   const [deliverassign, setDeliverAssign] = useState(null);
 
-
   const { dispatch } = useContext(DeliverAssignContext);
 
   const handleChange = (e) => {
@@ -42,23 +41,44 @@ export default function DeliverAssign() {
             <div className="dAInfo">
               <div className="dRInfobox">
                 <span className="dAspan">Customer Name :</span>
-                <input placeholder={deliver.customerName} value={deliver.customerName} disabled />
+                <input
+                  onChange={handleChange}
+                  name="customerName"
+                  id="customerName"
+                  value={deliver.customerName}
+                  placeholder={deliver.customerName}
+                />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Address :</span>
                 <textarea
+                  onChange={handleChange}
+                  name="address"
+                  id="address"
+                  value={deliver.address}
                   placeholder={deliver.address}
-                  disabled
                   className="dAInputAddress"
                 />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Zip Code :</span>
-                <input placeholder={deliver.zipCode} disabled />
+                <input
+                  onChange={handleChange}
+                  name="zipCode"
+                  id="zipCode"
+                  value={deliver.zipCode}
+                  placeholder={deliver.zipCode}
+                />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Mobile :</span>
-                <input placeholder={deliver.mobile} name="mobile" value={deliver.mobile} onChange={handleChange} />
+                <input
+                  onChange={handleChange}
+                  name="mobile"
+                  id="mobile"
+                  value={deliver.mobile}
+                  placeholder={deliver.mobile}
+                />
               </div>
             </div>
           </div>
@@ -103,20 +123,40 @@ export default function DeliverAssign() {
             </div>
             <div className="dRInputBox">
               <label className="dRLableName">Delivery Date :</label>
-              <input type="date" className="dRinput" name="deliveryDate" onChange={handleChange} required />
+              <input
+                type="date"
+                className="dRinput"
+                name="deliveryDate"
+                onChange={handleChange}
+                required
+              />
             </div>
           </div>
         </div>
         <div className="dAsectionRight">
           <div className="dAProductDetails">
             <div className="dATI">
-              <img src={deliver.productImg || product} alt="" className="dAProImg" />
+              <img
+                src={deliver.productImg || product}
+                onChange={handleChange}
+                name="productImg"
+                id="productImg"
+                value={deliver.productImg}
+                alt=""
+                className="dAProImg"
+              />
               <span className="dACTitle">Product Information</span>
             </div>
             <div className="dAInfo">
               <div className="dRInfobox">
                 <span className="dAspan">Product Name :</span>
-                <input placeholder={deliver.productName} disabled />
+                <input
+                  onChange={handleChange}
+                  name="productName"
+                  id="productName"
+                  value={deliver.productName}
+                  placeholder={deliver.productName}
+                />
               </div>
               <span>.</span>
               <div className="dRInfobox">
@@ -124,24 +164,50 @@ export default function DeliverAssign() {
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Payment Method :</span>
-                <input placeholder={deliver.paymentMethod} disabled />
+                <input
+                  onChange={handleChange}
+                  name="paymentMethod"
+                  id="paymentMethod"
+                  value={deliver.paymentMethod}
+                  placeholder={deliver.paymentMethod}
+                />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Price Per Unit :</span>
-                <input placeholder={deliver.pricePerUnit} disabled />
+                <input
+                  onChange={handleChange}
+                  name="pricePerUnit"
+                  id="pricePerUnit"
+                  value={deliver.pricePerUnit}
+                  placeholder={deliver.pricePerUnit}
+                />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Quantity :</span>
-                <input placeholder={deliver.Quantity} disabled />
+                <input
+                  onChange={handleChange}
+                  name="Quantity"
+                  id="Quantity"
+                  value={deliver.Quantity}
+                  placeholder={deliver.Quantity}
+                />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Total Price :</span>
-                <input placeholder={deliver.totalPrice} disabled />
+                <input
+                  onChange={handleChange}
+                  name="totalPrice"
+                  id="totalPrice"
+                  value={deliver.totalPrice}
+                  placeholder={deliver.totalPrice}
+                />
               </div>
             </div>
           </div>
           <div className="dABtn">
-            <button type="submit" onClick={handleSubmit}>ASSIGN TO DELIVER</button>
+            <button type="submit" onClick={handleSubmit}>
+              ASSIGN TO DELIVER
+            </button>
           </div>
         </div>
       </div>
