@@ -1,0 +1,50 @@
+.MORDContainer{
+    width: 1860px;
+    height: 100%;
+    min-height: 810px;
+    background-color: white;
+    margin: auto;
+    border-radius: 20px;
+    padding: 10px;
+
+
+    .MORDHeader{
+        margin-top: 25px;
+        
+
+        .link{
+            text-decoration: none;
+        }
+        
+        .MORDTitle{
+            font-size: 35px;
+            color: rgb(15, 0, 102);
+            margin-top: 15px;
+            font-weight: bold;
+            margin-left: 360px;
+            margin-top: 10px;
+        }
+    }
+
+    .dOrdersListAssign{
+        border-style: double;
+        border-color: rgb(218, 218, 218);
+        border-radius: 10px;
+        padding: 5px 10px;
+        background-color: hsl(229, 100%, 61%);
+        color: white;
+        cursor: pointer;
+        margin-right: 20px;
+    }
+
+    .dOrdersList{
+        width: 1100px;
+        height: 650px;
+        margin-left: 360px;
+        margin-top: 20px;
+        background-color: #B2BEB5;
+        border-radius: 10px;
+    }
+}
+
+

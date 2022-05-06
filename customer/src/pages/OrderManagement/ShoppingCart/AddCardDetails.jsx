@@ -35,15 +35,15 @@ const AddCardDetails = () => {
           
           <div className="cd_input">
             <input type="text" name="name" onChange={handleChange} placeholder="Name*" />
-            <input type="text" placeholder="Card Number*" />
+            <input type="text" name="cardNum" onChange={handleChange} placeholder="Card Number*" />
           </div>
 
           <div className="addrssDetails">
             <span className="name"></span>
 
             <div className="address_inputs">
-              <select className="dropdown" >
-                  <option>Select</option>
+              <select className="dropdown"  name="month" onChange={handleChange}>
+                  <option>Month</option>
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -56,28 +56,9 @@ const AddCardDetails = () => {
                   <option>10</option>
                   <option>11</option>
                   <option>12</option>
-                  <option>13</option>
-                  <option>14</option>
-                  <option>15</option>
-                  <option>16</option>
-                  <option>17</option>
-                  <option>18</option>
-                  <option>19</option>
-                  <option>20</option>
-                  <option>21</option>
-                  <option>22</option>
-                  <option>23</option>
-                  <option>24</option>
-                  <option>25</option>
-                  <option>26</option>
-                  <option>27</option>
-                  <option>28</option>
-                  <option>29</option>
-                  <option>30</option>
-                  <option>31</option>
               </select>
-              <input type="text" placeholder="Year*" />
-              <input type="text" placeholder="CVV*" />
+              <input type="text" name="year" onChange={handleChange} placeholder="Year*" />
+              <input type="text" name="cvv" onChange={handleChange} placeholder="CVV*" />
             </div>
 
             <div className="checkBox">
@@ -91,7 +72,7 @@ const AddCardDetails = () => {
               
               
               <button className="save" onClick={handleSubmit} >Save and Confirm</button>
-              <button className="clear">Clear</button>
+              <button className="clear">Cancel</button>
               
             </div>
           </div>

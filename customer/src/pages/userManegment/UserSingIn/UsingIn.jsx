@@ -21,13 +21,13 @@ export default function UsingIn() {
           <span className="SInTitel">SIGN IN</span>
 
           <div className="MIbox">
-            <span>Email</span>
+            <span>Email <span className='Star'>*</span></span>
             <input type='email' placeholder="ex: email@gmai.com"/>
 
-            <span className="ABC">Password</span>
+            <span className="ABC">Password <span className='Star'>*</span></span>
             <input type='password'  placeholder="Password"/>
 
-           <button className="BTN">Login</button>
+          <Link to="/user-profile"><button className="BTN">Login</button></Link> 
 
            <span className="Up">If You Not Register ? <Link to="/user-register"> <span className="UpS">SING UP</span></Link> </span>
 
