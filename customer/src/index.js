@@ -5,13 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ShoppingDataContextProvider } from './context/shoppingDataContext/ShoppingDataContext';
 import { CardDataContextProvider } from './context/cardDataContext/CardDataContext';
+import { CustomerUserContextProvider } from './context/CustomerUsersContext/CustomerUserContext';
 
 
 ReactDOM.render(
   <React.StrictMode>
     <ShoppingDataContextProvider>
       <CardDataContextProvider>
+        <CustomerUserContextProvider>
         <App />
+        </CustomerUserContextProvider>
       </CardDataContextProvider>
     </ShoppingDataContextProvider>
   </React.StrictMode>,

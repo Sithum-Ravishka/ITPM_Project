@@ -156,7 +156,7 @@ export default function DeliverRegister() {
                                     Create Deliver Account
                                 </button>
                                 ) : (
-                                <button className="dRCreate" onClick={handleUpload}>
+                                <button type='submit' className="dRCreate" onClick={handleUpload}>
                                     Upload
                                 </button>
                                 )}

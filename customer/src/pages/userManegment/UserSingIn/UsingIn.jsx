@@ -2,31 +2,34 @@ import React from "react";
 
 import "./UsingIn.scss";
 
+import singin from './singin.webp'
+import { Link } from "react-router-dom";
+
 export default function UsingIn() {
   return (
     <div className="ULContainer">
-      <div className="ulTitle">Sing In</div>
+      <div className="ulTitle"></div>
 
       <div className="UIContent">
         <div className="ULleft">
           <div className="Ulimg">
-            < img src="https://m.economictimes.com/thumb/msid-75400974,width-1200,height-900,resizemode-4,imgsize-263695/1.jpg" alt=""/>
+            < img src={singin} alt=""/>
           </div>
         </div>
 
         <div className="ULright">
-          <span>Sing IN</span>
-          
+          <span className="SInTitel">SIGN IN</span>
+
           <div className="MIbox">
-            <span>Email</span>
-            <input type='email'/>
+            <span>Email <span className='Star'>*</span></span>
+            <input type='email' placeholder="ex: email@gmai.com"/>
 
-            <span>Password</span>
-            <input type='password'/>
+            <span className="ABC">Password <span className='Star'>*</span></span>
+            <input type='password'  placeholder="Password"/>
 
-           <button>Login</button>
+          <Link to="/user-profile"><button className="BTN">Login</button></Link> 
 
-           <span>If you not rejesert ? <span>SING UP</span> </span>
+           <span className="Up">If You Not Register ? <Link to="/user-register"> <span className="UpS">SING UP</span></Link> </span>
 
           </div>
 
