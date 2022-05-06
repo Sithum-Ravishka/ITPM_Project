@@ -3,19 +3,19 @@ import { DataGrid } from "@material-ui/data-grid";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useContext } from "react";
-import { DeliverContext } from "../../../context/deliverContext/DeliverContext";
-import { getDelivers } from "../../../context/deliverContext/apiCalls";
 import { DeleteOutline } from "@material-ui/icons";
+import { DeliverAssignContext } from "../../../context/deliverAssignContext/DeliverAssignContext";
+import { deleteDeliverAssign, getDeliverAssings } from "../../../context/deliverAssignContext/apiCalls";
 
 export default function DeliveryOrderList() {
-  const { delivers, dispatch } = useContext(DeliverContext);
+  const { deliverassigns, dispatch } = useContext(DeliverAssignContext);
 
   useEffect(() => {
-    getDelivers(dispatch);
+    getDeliverAssings(dispatch);
   }, [dispatch]);
 
   const handleDelete = (id) => {
-    //delete(id, dispatch);
+    deleteDeliverAssign(id, dispatch);
   };
 
   const columns = [
@@ -58,7 +58,7 @@ export default function DeliveryOrderList() {
           <>
             <Link
               to={{
-                pathname: "/deliverassign/" + params.row._id,
+                pathname: "/deliverassigns/" + params.row._id,
                 deliver: params.row,
               }}
             >
@@ -84,7 +84,7 @@ export default function DeliveryOrderList() {
 
       <div className="dOrdersList">
         <DataGrid
-          rows={delivers}
+          rows={deliverassigns}
           disableSelectionOnClick
           columns={columns}
           pageSize={10}
