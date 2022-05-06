@@ -19,4 +19,18 @@ router.post("/", verify, async (req, res) => {
   }
 });
 
+
+router.get("/", verify, async (req, res) => {
+  if (req.user.isAdmin) {
+      try {
+        const shoppingdatas = await ShoppingData.find();
+        res.status(200).json(shoppingdatas.reverse());
+      } catch (err) {
+        res.status(500).json(err);
+      }
+    } else {
+    res.status(403).json("You are not allowed!");
+  }
+}); 
+
 module.exports = router;

@@ -60,9 +60,9 @@ const ShoppingCart = () => {
 
             <div className="buttons">
               <Link to="/add-card-details">
-                <button className="save" onClick={handleSubmit} >Save</button>
+                <button className="save" onClick={handleSubmit} >Save and Continue</button>
               </Link>
-              <button type="reset" className="clear">Clear</button>
+              <button type="reset" className="clear">Cancel</button>
             </div>
           </div>
           
