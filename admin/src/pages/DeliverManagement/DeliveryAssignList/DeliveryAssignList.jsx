@@ -62,7 +62,7 @@ export default function DeliveryOrderList() {
                 deliver: params.row,
               }}
             >
-              <button className="dOrdersListAssign">Assign To Deliver</button>
+              <button className="dOrdersListAssign">Edit Assign Deliver</button>
             </Link>
             <DeleteOutline
               className="assignDelete"

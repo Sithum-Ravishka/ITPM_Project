@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, Redirect, useLocation } from "react-router-dom";
 import "./deliverAssign.scss";
 import profile from "./profile.jpg";
 import product from "./product.webp";
@@ -205,9 +205,11 @@ export default function DeliverAssign() {
             </div>
           </div>
           <div className="dABtn">
+            <Link to="delivers">
             <button type="submit" onClick={handleSubmit}>
               ASSIGN TO DELIVER
             </button>
+            </Link>
           </div>
         </div>
       </div>

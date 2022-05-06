@@ -25,7 +25,7 @@ router.get("/", verify, async (req, res) => {
   if (req.user.isAdmin) {
       try {
         const deliverassigns = await DeliverAssign.find();
-        res.status(200).json(deliverassigns.reverse());
+        res.status(200).json(deliverassigns);
       } catch (err) {
         res.status(500).json(err);
       }
