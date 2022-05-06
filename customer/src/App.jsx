@@ -9,11 +9,8 @@ import ShoppingCart from "./pages/OrderManagement/ShoppingCart/ShoppingCart";
 import UserProfile from "./pages/userManegment/userProfile/UserProfile";
 import AddCardDetails from "./pages/OrderManagement/ShoppingCart/AddCardDetails";
 import OrderSuccess from './pages/OrderManagement/ShoppingCart/OrderSuccess'
-<<<<<<< HEAD
 import MyOrders from "./pages/OrderManagement/ShoppingCart/MyOrders";
-=======
 import UserRegister from "./pages/userManegment/UserRegister/UserRegister";
->>>>>>> 6077eeda2bd1e7f5c347a83c72e6dc865eb37d1e
 
 function App() {
   return (
@@ -31,12 +28,9 @@ function App() {
         <Route path="/Order-success" element={<OrderSuccess/>} />
         <Route path="/login" exact element={<DeliverLogin />} />
         <Route path="/cart" element={<ShoppingCart />} />
-<<<<<<< HEAD
         <Route path="/myOrders" element={<MyOrders />} />
         
-=======
         <Route path="/user-register" element={<UserRegister />} />
->>>>>>> 6077eeda2bd1e7f5c347a83c72e6dc865eb37d1e
       </Routes>
     </BrowserRouter>
   );
