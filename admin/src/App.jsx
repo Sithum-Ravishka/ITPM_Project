@@ -50,6 +50,7 @@ function App() {
         <Route path="/successful-register">
           <DRegisterValidation />
         </Route>
+
       </Switch>
     </Router>
   );
