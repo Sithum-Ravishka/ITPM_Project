@@ -12,6 +12,8 @@ import Categories from "./pages/category/categories";
 import Login from "./pages/login/Login";
 import DeliveryAssignList from "./pages/DeliverManagement/DeliveryAssignList/DeliveryAssignList";
 import DRegisterValidation from "./components/DeliverManagement/DValidation/DRegisterValidation";
+import EditAssignDelivery from "./pages/DeliverManagement/EditAssignDelivery/EditAssignDelivery";
+
 
 function App() {
   return (
@@ -50,6 +52,10 @@ function App() {
         <Route path="/successful-register">
           <DRegisterValidation />
         </Route>
+        <Route path="/deliverassign/:deliverassignId">
+          <EditAssignDelivery />
+        </Route>
+
 
       </Switch>
     </Router>

@@ -30,6 +30,33 @@ try{
 }
 });
 
+//Update
+
+router.put("/:id", async (req, res) => {
+
+  const deliverAssign = await DeliverAssign.findById(req.params.id)
+  deliverAssign.customerName = req.body.customerName;
+  deliverAssign.address = req.body.address;
+  deliverAssign.zipCode = req.body.zipCode;
+  deliverAssign.mobile= req.body.mobile;
+  deliverAssign.productName= req.body.productName;
+  deliverAssign.productImg= req.body.productImg;
+  deliverAssign.paymentMethod= req.body.paymentMethod;
+  deliverAssign.pricePerUnit= req.body.pricePerUnit;
+  deliverAssign.Quantity= req.body.Quantity;
+  deliverAssign.totalPrice= req.body.totalPrice;
+  deliverAssign.deliverName= req.body.deliverName;
+  deliverAssign.deliverNIC=req.body.deliverNIC;
+  deliverAssign.vechicleNo= req.body.vechicleNo;
+  deliverAssign.deliveryDate= req.body.deliveryDate;
+try{
+    await deliverAssign.save();
+  res.status(200).json(deliverAssign);
+} catch (err) {
+  res.status(500).json(err);
+}
+});
+
 
 router.post("/", verify, async (req, res) => {
   if (req.user.isAdmin) {

@@ -11,8 +11,6 @@ const shoppingdataRoute = require("./routes/shoppingdatas");
 const carddataRoute = require("./routes/carddatas");
 const deliveryusersRoute = require("./routes/deliveryusers");
 const customerusersRoute = require("./routes/customerusers");
-const testRoute = require("./routes/test");
-const testingRoute = require("./routes/testing");
 const cors = require("cors");
 
 dotenv.config();
