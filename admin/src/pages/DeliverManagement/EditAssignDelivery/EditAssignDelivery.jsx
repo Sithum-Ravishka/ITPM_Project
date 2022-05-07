@@ -1,93 +1,113 @@
-import React, { useCallback, useContext, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Link, Redirect, useLocation } from "react-router-dom";
-import "./deliverAssign.scss";
+import "./editAssignDelivery.scss";
 import profile from "./profile.jpg";
 import product from "./product.webp";
 import axios from "axios";
 
-export default function DeliverAssign() {
+export default function EditAssignDelivery() {
   const location = useLocation();
-  const deliver = location.deliver;
+  const deliverassign = location.deliverassign;
 
-  const [customerName, setCustomerName] = useState(deliver.customerName);
-  const [address, setAddress] = useState(deliver.address);
-  const [zipCode, setZipCode] = useState(deliver.zipCode);
-  const [mobile, setMobile] = useState(deliver.mobile);
-  const [productName, setProductName] = useState(deliver.productName);
-  const [productImg, setProductImg] = useState(deliver.productImg);
-  const [paymentMethod, setPaymentMethod] = useState(deliver.paymentMethod);
-  const [pricePerUnit, setPricePerUnit] = useState(deliver.pricePerUnit);
-  const [Quantity, setQuantity] = useState(deliver.Quantity);
-  const [totalPrice, setTotalPrice] = useState(deliver.totalPrice);
-  const [deliverName, setDeliverName] = useState();
-  const [deliverNIC, setDeliverNIC] = useState();
-  const [vechicleNo, setVechicleNo] = useState();
-  const [deliveryDate, setDeliveryDate] = useState();
+  const [customerName, setCustomerName] = useState(deliverassign ? deliverassign.customerName : "");
+  const [address, setAddress] = useState(deliverassign ? deliverassign.address : "");
+  const [zipCode, setZipCode] = useState(deliverassign ? deliverassign.zipCode : "");
+  const [mobile, setMobile] = useState(deliverassign ? deliverassign.mobile : "");
+  const [productName, setProductName] = useState(deliverassign ? deliverassign.productName : "");
+  const [productImg, setProductImg] = useState(deliverassign ? deliverassign.productImg : "");
+  const [paymentMethod, setPaymentMethod] = useState(deliverassign ? deliverassign.paymentMethod : "");
+  const [pricePerUnit, setPricePerUnit] = useState(deliverassign ? deliverassign.pricePerUnit : "");
+  const [Quantity, setQuantity] = useState(deliverassign ? deliverassign.Quantity : "");
+  const [totalPrice, setTotalPrice] = useState(deliverassign ? deliverassign.totalPrice : "");
+  const [deliverName, setDeliverName] = useState(deliverassign ? deliverassign.deliverName : "");
+  const [deliverNIC, setDeliverNIC] = useState(deliverassign ? deliverassign.deliverNIC : "");
+  const [vechicleNo, setVechicleNo] = useState(deliverassign ? deliverassign.vechicleNo : "");
+  const [deliveryDate, setDeliveryDate] = useState(deliverassign ? deliverassign.deliveryDate : "");
 
+  
   useEffect(() => {
-    setCustomerName(deliver.customerName);
-    setAddress(deliver.address);
-    setZipCode(deliver.zipCode);
-    setMobile(deliver.mobile);
-    setProductName(deliver.productName);
-    setProductImg(deliver.productImg);
-    setPaymentMethod(deliver.paymentMethod);
-    setPricePerUnit(deliver.pricePerUnit);
-    setQuantity(deliver.Quantity);
-    setTotalPrice(deliver.totalPrice);
-    setDeliverName("");
-    setDeliverNIC("");
-    setVechicleNo("");
-    setDeliveryDate("");
-    
-    },
-     [setCustomerName, 
-      setAddress,
-      setZipCode,
-      setMobile,
-      setProductName,
-      setProductImg,
-      setPaymentMethod,
-      setPricePerUnit,
-      setQuantity,
-      setTotalPrice,
-      setDeliverName,
-      setDeliverNIC,
-      setVechicleNo,
-      setDeliveryDate,
-      deliver,
-    ]);
+    if (deliverassign) {
+        setCustomerName(deliverassign.customerName);
+        setAddress(deliverassign.address);
+        setZipCode(deliverassign.zipCode);
+        setMobile(deliverassign.mobile);
+        setProductName(deliverassign.productName);
+        setProductImg(deliverassign.productImg);
+        setPaymentMethod(deliverassign.paymentMethod);
+        setPricePerUnit(deliverassign.pricePerUnit);
+        setQuantity(deliverassign.Quantity);
+        setTotalPrice(deliverassign.totalPrice);
+        setDeliverName(deliverassign.deliverName);
+        setDeliverNIC(deliverassign.deliverNIC);
+        setVechicleNo(deliverassign.vechicleNo);
+        setDeliveryDate(deliverassign.deliveryDate);
+    } else {
+        setCustomerName("");
+        setAddress("");
+        setZipCode("");
+        setMobile("");
+        setProductName("");
+        setProductImg("");
+        setPaymentMethod("");
+        setPricePerUnit("");
+        setQuantity("");
+        setTotalPrice("");
+        setDeliverName("");
+        setDeliverNIC("");
+        setVechicleNo("");
+        setDeliveryDate("");
+    }
+  }, [deliverassign,
+    setCustomerName, 
+    setAddress,
+    setZipCode,
+    setMobile,
+    setProductName,
+    setProductImg,
+    setPaymentMethod,
+    setPricePerUnit,
+    setQuantity,
+    setTotalPrice,
+    setDeliverName,
+    setDeliverNIC,
+    setVechicleNo,
+    setDeliveryDate,
+  ]);
 
   const onSubmit = useCallback(
     async (e) => {
       e.preventDefault();
-        await axios.post("http://localhost:8800/api/deliverassigns", {
-          customerName,
-          address,
-          zipCode,
-          mobile,
-          productName,
-          productImg,
-          paymentMethod,
-          pricePerUnit,
-          Quantity,
-          totalPrice,
-          deliverName,
-          deliverNIC,
-          vechicleNo,
-          deliveryDate,
-        });
-      },
-    [  customerName, address,zipCode, mobile, productName, productImg,
-      paymentMethod,
-      pricePerUnit,
-      Quantity,
-      totalPrice,
-      deliverName,
-      deliverNIC,
-      vechicleNo,
-      deliveryDate,]
+      if (deliverassign) {
+        await axios.put(
+          "http://localhost:8800/api/deliverassigns/" + deliverassign._id,
+          { customerName,
+            address,
+            zipCode,
+            mobile,
+            productName,
+            productImg,
+            paymentMethod,
+            pricePerUnit,
+            Quantity,
+            totalPrice,
+            deliverName,
+            deliverNIC,
+            vechicleNo,
+            deliveryDate,}
+        );
+      }
+    },
+    [deliverassign, customerName, address,zipCode, mobile, productName, productImg,
+        paymentMethod,
+        pricePerUnit,
+        Quantity,
+        totalPrice,
+        deliverName,
+        deliverNIC,
+        vechicleNo,
+        deliveryDate, ]
   );
+
 
 
   return (
@@ -109,42 +129,38 @@ export default function DeliverAssign() {
               <div className="dRInfobox">
                 <span className="dAspan">Customer Name :</span>
                 <input
-                  onChange={(e) => setCustomerName(e.target.value)}
                   name="customerName"
                   id="customerName"
-                  value={deliver.customerName}
-                  placeholder={deliver.customerName}
+                  value={deliverassign.customerName}
+                  placeholder={deliverassign.customerName}
                 />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Address :</span>
                 <textarea
-                  onChange={(e) => setAddress(e.target.value)}
                   name="address"
                   id="address"
-                  value={deliver.address}
-                  placeholder={deliver.address}
+                  value={deliverassign.address}
+                  placeholder={deliverassign.address}
                   className="dAInputAddress"
                 />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Zip Code :</span>
                 <input
-                  onChange={(e) => setZipCode(e.target.value)}
                   name="zipCode"
                   id="zipCode"
-                  value={deliver.zipCode}
-                  placeholder={deliver.zipCode}
+                  value={deliverassign.zipCode}
+                  placeholder={deliverassign.zipCode}
                 />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Mobile :</span>
                 <input
-                  onChange={(e) => setMobile(e.target.value)}
                   name="mobile"
                   id="mobile"
-                  value={deliver.mobile}
-                  placeholder={deliver.mobile}
+                  value={deliverassign.mobile}
+                  placeholder={deliverassign.mobile}
                 />
               </div>
             </div>
@@ -159,7 +175,7 @@ export default function DeliverAssign() {
               <label className="dRLableName">Deliver Name :</label>
               <input
                 type="text"
-                placeholder="Enter Deliver Name"
+                placeholder={deliverassign.deliverName}
                 className="dRinput"
                 name="deliverName"
                 onChange={(e) => setDeliverName(e.target.value)}
@@ -170,7 +186,7 @@ export default function DeliverAssign() {
               <label className="dRLableName">Deliver NIC :</label>
               <input
                 type="text"
-                placeholder="Enter Deliver NIC"
+                placeholder={deliverassign.deliverNIC}
                 className="dRinput"
                 name="deliverNIC"
                 onChange={(e) => setDeliverNIC(e.target.value)}
@@ -181,7 +197,7 @@ export default function DeliverAssign() {
               <label className="dRLableName">Vechicle No :</label>
               <input
                 type="text"
-                placeholder="Enter Vechicle No"
+                placeholder={deliverassign.vechicleNo}
                 className="dRinput"
                 name="vechicleNo"
                 onChange={(e) => setVechicleNo(e.target.value)}
@@ -194,9 +210,11 @@ export default function DeliverAssign() {
                 type="date"
                 className="dRinput"
                 name="deliveryDate"
+                placeholder={deliverassign.deliveryDate}
                 onChange={(e) => setDeliveryDate(e.target.value)}
                 required
               />
+              <span className="datespan">{deliverassign.deliveryDate}</span>
             </div>
           </div>
         </div>
@@ -204,11 +222,11 @@ export default function DeliverAssign() {
           <div className="dAProductDetails">
             <div className="dATI">
               <img
-                src={deliver.productImg || product}
-                onChange={(e) => setProductImg(e.target.value)}
+                src={deliverassign.productImg || product}
+
                 name="productImg"
                 id="productImg"
-                value={deliver.productImg}
+                value={deliverassign.productImg}
                 alt=""
                 className="dAProImg"
               />
@@ -218,11 +236,11 @@ export default function DeliverAssign() {
               <div className="dRInfobox">
                 <span className="dAspan">Product Name :</span>
                 <input
-                  onChange={(e) => setProductName(e.target.value)}
+    
                   name="productName"
                   id="productName"
-                  value={deliver.productName}
-                  placeholder={deliver.productName}
+                  value={deliverassign.productName}
+                  placeholder={deliverassign.productName}
                 />
               </div>
               <span>.</span>
@@ -232,48 +250,48 @@ export default function DeliverAssign() {
               <div className="dRInfobox">
                 <span className="dAspan">Payment Method :</span>
                 <input
-                  onChange={(e) => setPaymentMethod(e.target.value)}
+
                   name="paymentMethod"
                   id="paymentMethod"
-                  value={deliver.paymentMethod}
-                  placeholder={deliver.paymentMethod}
+                  value={deliverassign.paymentMethod}
+                  placeholder={deliverassign.paymentMethod}
                 />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Price Per Unit :</span>
                 <input
-                  onChange={(e) => setPricePerUnit(e.target.value)}
+
                   name="pricePerUnit"
                   id="pricePerUnit"
-                  value={deliver.pricePerUnit}
-                  placeholder={deliver.pricePerUnit}
+                  value={deliverassign.pricePerUnit}
+                  placeholder={deliverassign.pricePerUnit}
                 />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Quantity :</span>
                 <input
-                  onChange={(e) => setQuantity(e.target.value)}
+   
                   name="Quantity"
                   id="Quantity"
-                  value={deliver.Quantity}
-                  placeholder={deliver.Quantity}
+                  value={deliverassign.Quantity}
+                  placeholder={deliverassign.Quantity}
                 />
               </div>
               <div className="dRInfobox">
                 <span className="dAspan">Total Price :</span>
                 <input
-                  onChange={(e) => setTotalPrice(e.target.value)}
+  
                   name="totalPrice"
                   id="totalPrice"
-                  value={deliver.totalPrice}
-                  placeholder={deliver.totalPrice}
+                  value={deliverassign.totalPrice}
+                  placeholder={deliverassign.totalPrice}
                 />
               </div>
             </div>
           </div>
           <div className="dABtn">
             <button type="submit">
-              ASSIGN TO DELIVER
+             RE-ASSIGN TO DELIVER
             </button>
           </div>
         </div>

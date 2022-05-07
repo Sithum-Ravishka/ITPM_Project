@@ -58,11 +58,11 @@ export default function DeliveryOrderList() {
           <>
             <Link
               to={{
-                pathname: "/deliverassigns/" + params.row._id,
-                deliver: params.row,
+                pathname: "/deliverassign/" + params.row._id,
+                deliverassign: params.row,
               }}
             >
-              <button className="dOrdersListAssign">Assign To Deliver</button>
+              <button className="dOrdersListAssign">Edit Assign Deliver</button>
             </Link>
             <DeleteOutline
               className="assignDelete"

@@ -11,6 +11,9 @@ import DeliverAssign from "./pages/DeliverManagement/DeliverAssign/DeliverAssign
 import Categories from "./pages/category/categories";
 import Login from "./pages/login/Login";
 import DeliveryAssignList from "./pages/DeliverManagement/DeliveryAssignList/DeliveryAssignList";
+import DRegisterValidation from "./components/DeliverManagement/DValidation/DRegisterValidation";
+import EditAssignDelivery from "./pages/DeliverManagement/EditAssignDelivery/EditAssignDelivery";
+import Products from "./pages/product/products";
 
 function App() {
   return (
@@ -40,11 +43,20 @@ function App() {
         <Route path="/categories">
           <Categories />
         </Route>
+        <Route path="/products">
+          <Products />
+        </Route>
         <Route path="/login">
           <Login />
         </Route>
         <Route path="/delivery-assign-List">
           <DeliveryAssignList />
+        </Route>
+        <Route path="/successful-register">
+          <DRegisterValidation />
+        </Route>
+        <Route path="/deliverassign/:deliverassignId">
+          <EditAssignDelivery />
         </Route>
       </Switch>
     </Router>

@@ -6,8 +6,15 @@ export default function DRegisterValidation() {
     <div className="dAContainer">
       <div className="dAHeader">
         <Link to="/deliver-register" className="link">
-          <span className="dATitle">Order Assign Page</span>
+          <span className="dATitle"></span>
         </Link>
+      </div>
+
+      <div className="RVContent">
+        <div className="suc">
+          <span>Successful Register DeliveryUser</span>
+          <button>Go Back To Home</button>
+        </div>
       </div>
     </div>
   )

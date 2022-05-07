@@ -1,12 +1,9 @@
-import "../DeliverManagement/DeliveryOrderList/deliveryOrderList.scss";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { Table } from "../../components/table";
 import { Button } from "../../components/button";
-import { Input } from "../../components/input/index.";
-import { Form } from "../../components/form";
 import { Grid } from "../../components/grid";
+import { Table } from "../../components/table";
+import "../DeliverManagement/DeliveryOrderList/deliveryOrderList.scss";
 import { CategoriesForm } from "./categories-form";
 
 const getCategories = async () => {
@@ -36,8 +33,8 @@ export default function Categories() {
 
   return (
     <div className="dordersContainer">
-      <Grid p="16px" alignItems="flex-start">
-        <h1 style={{ margin: 0 }} className="dRMTitle">
+      <Grid p="16px" gridAutoFlow="column" alignItems="center">
+        <h1 style={{ margin: 0, color: "#0f0066" }} className="dRMTitle">
           Categories
         </h1>
         <Button mt="16px" onClick={() => setCategory(undefined)} ml="24px">
