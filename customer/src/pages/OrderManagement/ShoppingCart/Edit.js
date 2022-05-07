@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation} from "react-router-dom";
 import "./ShoppinCart.scss";
 
 const Edit = () => {
-  
+    const location = useLocation();
+    const shoppingdata = location.shoppingdata;
   
   return (
     
@@ -16,7 +17,7 @@ const Edit = () => {
         <div className="contactDetails">
           <span className="name">Contact Details</span>
           <div className="cd_input">
-            <input type="text" name="name"  placeholder="Name*" />
+            <input type="text" name="name"  placeholder={shoppingdata.contactNum} />
             <input type="text" name="contactNum" placeholder="Contact Number*"/>
           </div>
 

@@ -3,10 +3,10 @@ import './AddCartDetails.scss';
 import cardLogo from './CreditCards.png';
 import { createCardData } from "../../../context/cardDataContext/apiCalls";
 import { CardDataContext } from "../../../context/cardDataContext/CardDataContext";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const AddCardDetails = () => {
-  const navigate = useNavigate();
+  const navigate = useHistory();
 
   const [carddata, setCardData] = useState(null);
 

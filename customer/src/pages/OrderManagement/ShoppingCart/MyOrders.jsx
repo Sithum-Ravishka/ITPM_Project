@@ -64,7 +64,7 @@ export default function MyOrders() {
           <>
             <Link
               to={{
-                pathname: "/shoppingdatas/" + params.row._id,
+                pathname: "/shoppingdata/" + params.row._id,
                 deliver: params.row,
               }}
             >
