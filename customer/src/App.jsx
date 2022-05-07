@@ -11,6 +11,7 @@ import AddCardDetails from "./pages/OrderManagement/ShoppingCart/AddCardDetails"
 import OrderSuccess from './pages/OrderManagement/ShoppingCart/OrderSuccess'
 import MyOrders from "./pages/OrderManagement/ShoppingCart/MyOrders";
 import UserRegister from "./pages/userManegment/UserRegister/UserRegister";
+import Allcart from "./pages/OrderManagement/ShoppingCart/Allcart";
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
         <Route path="/myOrders" element={<MyOrders />} />
         
         <Route path="/user-register" element={<UserRegister />} />
+        <Route path="/all-cart" element={<Allcart />} />
+        
+
       </Routes>
     </BrowserRouter>
   );

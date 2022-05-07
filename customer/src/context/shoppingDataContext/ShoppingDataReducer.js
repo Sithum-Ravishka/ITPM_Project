@@ -37,6 +37,24 @@ const ShoppingDataReducer = (state, action) => {
               isFetching: false,
               error: true,
             };
+            case "DELETE_SHOPPINGDATA_START":
+              return {
+                ...state,
+                isFetching: true,
+                error: false,
+              };
+            case "DELETE_SHOPPINGDATA_SUCCESS":
+              return {
+                shoppingdatas: state.shoppingdatas.filter((shoppingdata) => shoppingdata._id !== action.payload),
+                isFetching: false,
+                error: false,
+              };
+            case "DELETE_DELIVERASSIGN_FAILURE":
+              return {
+                ...state,
+                isFetching: false,
+                error: true,
+              };
            
         default:
             return { ...state };

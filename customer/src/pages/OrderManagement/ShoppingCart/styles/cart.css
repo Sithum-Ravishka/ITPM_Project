@@ -1,0 +1,176 @@
+.body{
+  margin: 0;
+  padding: 0;
+}
+
+article {
+  width: 1900px;
+  height: 80%;
+  margin: auto;
+  background-color: white;
+  border-radius: 0px 0px 20px 20px;
+  padding: 2px;
+}
+
+.cartBox{
+  display: flex;
+  flex-direction: row;
+  margin-left: 200px;
+  margin-top: 60px;
+}
+
+.buyNow{
+  display: flex;
+  flex-direction: column;
+  margin-left: 300px;
+}
+
+.yourInfo{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  
+}
+
+.yourInfo>:nth-child(2){
+  margin-bottom: 50px;
+}
+.yourInfo>:nth-child(4){
+  margin-bottom: 50px;
+}
+
+
+
+.btn{
+  margin-top: 20px;
+}
+
+.cart_box img {
+  width: 50px;
+  height: 50px;
+}
+
+.paymentName{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;  
+}
+
+
+.v{
+  background-color: white;
+  border-radius: 10px;
+}
+
+.cart_img {
+  display: flex;
+  width: 400px;
+}
+
+.cart_img p {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+
+.cart_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-bottom: 5px;
+}
+
+.colNames{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.colNames :nth-child(2){
+  margin-left: 350px;
+}
+
+.colNames :nth-child(3){
+  margin-left: 40px;
+}
+
+.colNames :nth-child(4){
+  margin-left: 40px;
+}
+
+
+.cart_box div:nth-child(2) button {
+  padding: 5px 10px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.cart_box div:nth-child(3) button {
+  padding: 5px 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.cart_box div:nth-child(3) img {
+  width: 25px;
+  height: 25px;
+}
+.cart_box div:nth-child(3) button:hover {
+  background-color: darkseagreen;
+}
+.cart_box div:nth-child(3) span {
+  background-color: lightgreen;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.total {
+  display: flex;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background-color: #c0c0c0;
+  border-radius: 6px;
+  height:80px;
+  width: 350px;
+  margin-top: 30px;
+}
+
+.total span:nth-child(1) {
+ margin: auto;
+
+}
+
+.total span:nth-child(2) {
+  font-size: 2rem;
+  color: green;
+  font-weight: bold;
+}
+
+.addSub{
+  background-color: transparent;
+  border: none;
+}
+
+.removecart{
+ width: -1%;
+ margin-right: 45px;
+}
+
+.btn1 {
+  background-color:greenyellow;
+  height:80px;
+  width: 350px;
+  border-radius: 5px;
+  margin-bottom: 62px;
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+}

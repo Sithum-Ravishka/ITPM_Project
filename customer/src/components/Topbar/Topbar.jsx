@@ -37,7 +37,7 @@ const navItems = [
   },
   {
     name: "Cart",
-    link: "/cart",
+    link: "/all-cart",
   },
 
   {
