@@ -7,6 +7,10 @@ import { DeleteOutline } from "@material-ui/icons";
 import {CustomerUserContext } from "../../../context/CustomerUsersContext/CustomerUserContext";
 import { deleteCustomerUsers, getCustomerUser } from "../../../context/CustomerUsersContext/apiCalls";
 
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
+
+
 export default function UserList() {
   const { customerusers, dispatch } = useContext(CustomerUserContext);
 
@@ -17,6 +21,18 @@ export default function UserList() {
     const handleDelete = (id) => {
     deleteCustomerUsers(id, dispatch);
   }
+
+  //Report
+  function report(){
+    const doc = new jsPDF()
+    doc.text("Customer Details List", 20, 10)
+    doc.autoTable({
+      theme: "grid",
+      columns: columns.map(col => ({ ...col, dataKey: col.field })),
+      body: customerusers
+    })
+    doc.save('Customer List.pdf')
+}
 
   const columns = [
     {
@@ -117,6 +133,7 @@ export default function UserList() {
         <Link to="/delivery-order-list" className="link">
           <span className="dRMTitle">Details For Customers</span>
         </Link>
+        <button type="button" class="btn btn-secondary btn-sm" onClick={report} >Generate Report</button>
       </div>
 
       <div className="dOrdersList">
