@@ -24,7 +24,7 @@ export default function DeliveryOrderList() {
       columns: columns.map(col => ({ ...col, dataKey: col.field })),
       body: deliverassigns
     })
-    doc.save('Furniture List.pdf')
+    doc.save('Assign Delivery List.pdf')
 }
 
 
@@ -82,7 +82,7 @@ export default function DeliveryOrderList() {
               }}
             >
               <button className="dOrdersListAssign">Edit Assign Deliver</button>
-              <button type="button" class="btn btn-secondary btn-sm" onClick={report} >Generate Report</button>
+
             </Link>
             <DeleteOutline
               className="assignDelete"
@@ -100,7 +100,10 @@ export default function DeliveryOrderList() {
         <Link to="/delivery-order-list" className="link">
           <span className="dRMTitle">Assign Order List for Deliver</span>
         </Link>
+
+        <button type="button" class="reportBtn" onClick={report} >Generate Report</button>
       </div>
+ 
 
       <div className="dOrdersList">
         <DataGrid

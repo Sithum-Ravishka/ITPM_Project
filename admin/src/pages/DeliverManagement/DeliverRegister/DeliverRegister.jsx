@@ -59,7 +59,7 @@ export default function DeliverRegister() {
   const handleSubmit = (e) => {
     e.preventDefault();
     createDeliveryUser(deliveryuser, dispatch);
-    history.push("/deliver-register");
+    history.push("/deliver-home");
     setDone(true);
     console.log(e.text);
   };
