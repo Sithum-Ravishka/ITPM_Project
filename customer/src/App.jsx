@@ -11,13 +11,9 @@ import AddCardDetails from "./pages/OrderManagement/ShoppingCart/AddCardDetails"
 import OrderSuccess from "./pages/OrderManagement/ShoppingCart/OrderSuccess";
 import MyOrders from "./pages/OrderManagement/ShoppingCart/MyOrders";
 import UserRegister from "./pages/userManegment/UserRegister/UserRegister";
-<<<<<<< HEAD
 import { Products } from "./pages/Products/Products";
-=======
 import Allcart from "./pages/OrderManagement/ShoppingCart/Allcart";
-import { Products } from "./pages/Products/Products";
 import Edit from "./pages/OrderManagement/ShoppingCart/Edit";
->>>>>>> 927dc2b1f602fc2852adce49de62cc6ab641efca
 
 function App() {
   return (
@@ -25,24 +21,6 @@ function App() {
       <div className="htopbar">
         <Topbar />
       </div>
-<<<<<<< HEAD
-      <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route path="/products" exact element={<Products />} />
-        <Route path="/signin" exact element={<DeliverLogin />} />
-        <Route path="/shoppingcart" element={<ShoppingCart />} />
-        <Route path="/user-singin" element={<UsingIn />} />
-        <Route path="/user-profile" element={<UserProfile />} />
-        <Route path="/add-card-details" element={<AddCardDetails />} />
-        <Route path="/Order-success" element={<OrderSuccess />} />
-        <Route path="/login" exact element={<DeliverLogin />} />
-        <Route path="/cart" element={<ShoppingCart />} />
-        <Route path="/myOrders" element={<MyOrders />} />
-
-        <Route path="/user-register" element={<UserRegister />} />
-      </Routes>
-    </BrowserRouter>
-=======
       <Switch>
         <Route exact path="/">
           <Home />
@@ -88,7 +66,6 @@ function App() {
         </Route>
       </Switch>
     </Router>
->>>>>>> 927dc2b1f602fc2852adce49de62cc6ab641efca
   );
 }
 
