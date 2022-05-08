@@ -64,11 +64,6 @@ export default function MyOrders() {
       width: 150,
     },
     {
-      field: " ",
-      headerName: "Price",
-      width: 150,
-    },
-    {
       field: "action",
       headerName: "Action",
       width: 200,
