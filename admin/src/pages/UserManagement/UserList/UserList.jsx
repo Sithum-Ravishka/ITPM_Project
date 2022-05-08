@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import { DeleteOutline } from "@material-ui/icons";
 import {CustomerUserContext } from "../../../context/CustomerUsersContext/CustomerUserContext";
-import { getCustomerUser } from "../../../context/CustomerUsersContext/apiCalls";
+import { deleteCustomerUsers, getCustomerUser } from "../../../context/CustomerUsersContext/apiCalls";
 
 export default function UserList() {
   const { customerusers, dispatch } = useContext(CustomerUserContext);
@@ -14,9 +14,9 @@ export default function UserList() {
     getCustomerUser(dispatch);
   }, [dispatch]);
 
-  /*const handleDelete = (id) => {
-    deleteDeliverAssign(id, dispatch);
-  };*/
+    const handleDelete = (id) => {
+    deleteCustomerUsers(id, dispatch);
+  }
 
   const columns = [
     {
@@ -26,7 +26,12 @@ export default function UserList() {
     },
     {
       field: "firstName",
-      headerName: "Custormer Name",
+      headerName: "Fist Name",
+      width: 200,
+    },
+    {
+      field: "lastName",
+      headerName: "Last Name",
       width: 200,
     },
     {
@@ -36,17 +41,47 @@ export default function UserList() {
     },
     {
       field: "userName",
-      headerName: "Deliver Name",
+      headerName: "User Name",
       width: 120,
     },
     {
       field: "dateOfBirth",
-      headerName: "Contact Number",
+      headerName: "Date of Birth",
       width: 200,
     },
     {
       field: "streetAddress",
-      headerName: "Product Name",
+      headerName: "Street Address",
+      width: 150,
+    },
+    {
+      field: "streetAddress2",
+      headerName: "Street Address2",
+      width: 150,
+    },
+    {
+      field: "city",
+      headerName: "City",
+      width: 150,
+    },
+    {
+      field: "state",
+      headerName: "State/Province",
+      width: 150,
+    },
+    {
+      field: "postId",
+      headerName: "Porst Code",
+      width: 150,
+    },
+    {
+      field: "contactNumber",
+      headerName: "Contact Number",
+      width: 150,
+    },
+    {
+      field: "gender",
+      headerName: "Gender",
       width: 150,
     },
     {
@@ -58,12 +93,17 @@ export default function UserList() {
           <>
             <Link
               to={{
-                pathname: "/deliverassign/" + params.row._id,
-                deliverassign: params.row,
+                pathname: "/customeruser/" + params.row._id,
+                customeruser: params.row,
               }}
             >
-              <button className="dOrdersListAssign">Edit Assign Deliver</button>
+              <button className="dOrdersListAssign">Edit Customer</button>
             </Link>
+
+            <DeleteOutline
+              className="assignDelete"
+              onClick={() => handleDelete(params.row._id)}
+            />
            
           </>
         );
@@ -75,7 +115,7 @@ export default function UserList() {
     <div className="dordersContainer">
       <div className="dRHeader">
         <Link to="/delivery-order-list" className="link">
-          <span className="dRMTitle">Assign Order List for Deliver</span>
+          <span className="dRMTitle">Details For Customers</span>
         </Link>
       </div>
 

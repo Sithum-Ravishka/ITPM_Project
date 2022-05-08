@@ -6,6 +6,10 @@ import {
   getCustomerUsersFailure,
   getCustomerUsersStart,
   getCustomerUsersSuccess,
+  deleteCustomerUsersStart,
+  deleteCustomerUsersSuccess,
+  deleteCustomerUsersFailure,
+
 } from "./CustomerUserActions";
 
 export const getCustomerUser = async (dispatch) => {
@@ -19,6 +23,20 @@ export const getCustomerUser = async (dispatch) => {
     dispatch(getCustomerUsersSuccess(res.data));
   } catch (err) {
     dispatch(getCustomerUsersFailure());
+  }
+};
+//delete
+export const deleteCustomerUsers = async (id, dispatch) => {
+  dispatch(deleteCustomerUsersStart());
+  try {
+    await axios.delete("/customerusers/" + id, {
+      headers: {
+        token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+      },
+    });
+    dispatch(deleteCustomerUsersSuccess(id));
+  } catch (err) {
+    dispatch(deleteCustomerUsersFailure());
   }
 };
 

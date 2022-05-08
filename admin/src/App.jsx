@@ -15,6 +15,7 @@ import DRegisterValidation from "./components/DeliverManagement/DValidation/DReg
 import EditAssignDelivery from "./pages/DeliverManagement/EditAssignDelivery/EditAssignDelivery";
 import Products from "./pages/product/products";
 import UserList from "./pages/UserManagement/UserList/UserList";
+import UserEditeDetails from "./pages/UserManagement/UserEditDetails/UserEditeDetails";
 
 function App() {
   return (
@@ -61,6 +62,9 @@ function App() {
         </Route>
         <Route path="/userlist">
           <UserList />
+        </Route>
+        <Route path="/customeruser/:customeruserId">
+          <UserEditeDetails/>
         </Route>
       </Switch>
     </Router>

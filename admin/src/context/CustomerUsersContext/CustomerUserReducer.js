@@ -58,6 +58,25 @@ const CustomerUsersReducer = (state, action) => {
               isFetching: false,
               error: true,
             };
+            case "DELETE_CUSTOMERUSER_START":
+            return {
+              ...state,
+              isFetching: true,
+              error: false,
+            };
+          case "DELETE_CUSTOMERUSER_SUCCESS":
+            return {
+              customerusers: state.customerusers.filter((customeruser) => customeruser._id !== action.payload),
+              isFetching: false,
+              error: false,
+            };
+          case "DELETE_CUSTOMERUSER_FAILURE":
+            return {
+              ...state,
+              isFetching: false,
+              error: true,
+            };
+
         default:
             return { ...state };
     }

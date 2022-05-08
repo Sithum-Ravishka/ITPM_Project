@@ -201,7 +201,7 @@ export default function UserRegister() {
               <div className="UrButton">
               {uploaded === 1 ? (
                                 <button className="UrButton3" onClick={handleSubmit}>
-                                    Create Deliver Account
+                                    Create User Account
                                 </button>
                                 ) : (
                                 <button className="UrButton3" onClick={handleUpload}>
