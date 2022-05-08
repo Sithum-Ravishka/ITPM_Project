@@ -1,16 +1,101 @@
-.DLContainer {
+.DLContainer{
   width: 1500px;
   height: 100%;
-  min-height: 620px;
+  min-height: 580px;
   background-color: white;
   margin: auto;
   border-radius: 20px;
   padding: 10px;
 
-  .dLTitle{
-    font-size: 28px;
-    font-weight: bold;
-    margin-left: 760px;
-    margin-top: 10px;
+  .UIContent {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    min-height: 580px;
+    background-color: white;
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+
+    .ULleft {
+      padding: 50px;
+      .Ulimg {
+        margin-left: 100px;
+        margin-top: 60px;
+        img {
+          width: 500px;
+          height: 400px;
+        }
+      }
+    }
+
+    .ULright {
+      display: flex;
+      flex-direction: column;
+      margin-top: 25px;
+      margin-left: 40px;
+
+      .title {
+        font-size: 33px;
+        font-weight: bold;
+        margin-left: 225px;
+        padding: 20px;
+        color: #1006a5;
+      }
+
+      .DLgnbox {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(225, 225, 225);
+        padding: 40px;
+        font-weight: bold;
+        font-size: 25px;
+        margin-left: 150px;
+        box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+
+        .Star {
+          color: red;
+          font-size: 25px;
+          font-weight: bold;
+          margin-left: 5px;
+        }
+        .pass {
+          margin-top: 30px;
+
+        }
+
+        .DLbtn {
+          margin-top: 30px;
+          font-size: 24px;
+          color: white;
+          background-color: #1006a5;
+          width: 150px;
+          height: 45px;
+          padding: 8px 15px;
+          margin-left: 100px;
+          border-radius: 8px;
+          border: none;
+          cursor: pointer;
+        }
+
+        .Up {
+          margin-top: 20px;
+          margin-left: 60px;
+          color: #0052e0;
+          font-weight: bold;
+          font-size: 19px;
+        }
+
+        input {
+          width: 330px;
+          height: 40px;
+          padding: 5px 15px;
+          background-color: white;
+          color: gray;
+          font-size: 16px;
+          box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+          border-style: double;
+          margin-top: 10px;
+        }
+      }
+    }
   }
 }
