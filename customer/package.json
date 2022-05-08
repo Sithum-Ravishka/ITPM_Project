@@ -19,6 +19,7 @@
     "react-scripts": "5.0.0",
     "reactjs-localstorage": "^1.0.1",
     "sass": "^1.49.9",
+    "start": "^5.1.0",
     "styled-components": "^5.3.5",
     "styled-system": "^5.1.5",
     "web-vitals": "^2.1.4"

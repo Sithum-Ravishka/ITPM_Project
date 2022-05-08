@@ -11,8 +11,8 @@ import AddCardDetails from "./pages/OrderManagement/ShoppingCart/AddCardDetails"
 import OrderSuccess from "./pages/OrderManagement/ShoppingCart/OrderSuccess";
 import MyOrders from "./pages/OrderManagement/ShoppingCart/MyOrders";
 import UserRegister from "./pages/userManegment/UserRegister/UserRegister";
-import Allcart from "./pages/OrderManagement/ShoppingCart/Allcart";
 import { Products } from "./pages/Products/Products";
+import Allcart from "./pages/OrderManagement/ShoppingCart/Allcart";
 import Edit from "./pages/OrderManagement/ShoppingCart/Edit";
 import DeliverProfile from "./pages/DeliverManagement/DeliverProfile/DeliverProfile";
 

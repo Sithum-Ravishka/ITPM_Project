@@ -13,6 +13,7 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
+    "file-saver": "^2.0.5",
     "firebase": "^8.7.1",
     "jspdf": "^2.5.1",
     "jspdf-autotable": "^3.5.23",
@@ -27,7 +28,8 @@
     "sass": "^1.49.9",
     "styled-components": "^5.3.5",
     "styled-system": "^5.1.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5"
   },
   "scripts": {
     "start": "react-scripts start",

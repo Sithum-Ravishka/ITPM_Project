@@ -17,7 +17,7 @@ const navItems = [
   },
   {
     name: "Customers",
-    link: "/customers",
+    link: "/userlist",
     icon: HiUsers,
   },
   {
