@@ -74,7 +74,7 @@ export default function Topbar() {
             key={name}
             onClick={() => {
               setActiveMenu(name);
-              history(link);
+              history.push(link);
             }}
           >
             {name}

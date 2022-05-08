@@ -11,7 +11,8 @@ export default function DeliverRegister() {
   const [licensePhoto, setlicensePhoto] = useState(null);
   const [deliverPhoto, setdeliverPhoto] = useState(null);
   const [uploaded, setUploaded] = useState(0);
-
+  const [done, setDone] = useState(false);
+  
   const { dispatch } = useContext(DeliveryUserContext);
 
   const handleChange = (e) => {
@@ -56,7 +57,10 @@ export default function DeliverRegister() {
   const handleSubmit = (e) => {
     e.preventDefault();
     createDeliveryUser(deliveryuser, dispatch);
+    setDone(true);
+    console.log(e.text);
   };
+
 
   return (
     <div className="dRContainer">
@@ -131,8 +135,9 @@ export default function DeliverRegister() {
                     Contact Number <span className="dRLable">*</span>
                   </label>
                   <input
-                    type="text"
+                    type="number"
                     name="contactNumber"
+                    maxLength={10}
                     id="contactNumber"
                     onChange={handleChange}
                     placeholder="Enter Contact Number"
@@ -289,6 +294,7 @@ export default function DeliverRegister() {
                   Upload
                 </button>
               )}
+              <span>{done && "Deliver Register Successful"}</span>
             </div>
           </div>
         </form>
