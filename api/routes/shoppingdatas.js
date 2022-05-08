@@ -58,4 +58,24 @@ router.get("/find/:id", verify, async (req, res) => {
   }
 });
 
+
+//Update
+
+router.put("/:id", async (req, res) => {
+  const shoppingdata = await ShoppingData.findById(req.params.id);
+  shoppingdata.name = req.body.name;
+  shoppingdata.contactNum = req.body.contactNum;
+  shoppingdata.addresl1 = req.body.addresl1;
+  shoppingdata.addresl2 = req.body.addresl2;
+  shoppingdata.addresl3 = req.body.addresl3;
+  shoppingdata.district = req.body.district;
+  shoppingdata.zipCode = req.body.zipCode;
+ 
+  try {
+    await shoppingdata.save();
+    res.status(200).json(shoppingdata );
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 module.exports = router;

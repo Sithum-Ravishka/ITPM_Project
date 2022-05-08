@@ -21,7 +21,7 @@ const AddCardDetails = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     createCardData(carddata, dispatch);
-    navigate("/Order-success");
+    navigate.push("/Order-success");
   };
   return (
     <div className="CRDContainer">
