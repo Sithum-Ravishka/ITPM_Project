@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import styled from "styled-components";
 import { Grid } from "../../components/grid";
 import axios from "axios";
@@ -26,13 +26,20 @@ const SImgAvatar = styled.img`
 const getCategories = async () => {
   return await axios.get("http://localhost:8800/api/categories");
 };
+
 const getProducts = async () => {
   return await axios.get("http://localhost:8800/api/products");
 };
 
-export default function Home() {
+export const Products = () => {
   const [categories, setCategories] = useState([]);
   const [rawProducts, setRawProducts] = useState([]);
+  const [categoryId, setCategoryId] = useState("");
+
+  const selectedCategory = useMemo(
+    () => categories.find(({ _id }) => _id === categoryId),
+    [categories, categoryId]
+  );
 
   const fetchCategories = useCallback(async () => {
     const { data } = await getCategories();
@@ -52,38 +59,40 @@ export default function Home() {
     fetchProducts();
   }, [fetchProducts]);
 
-  // TODO: Filter the promotional products
+  // TODO: Filter products by category id
   const products = rawProducts;
 
   return (
     <SWrapper>
-      <Text.Heading fontWeight="bold">Shop by categories</Text.Heading>
       <Grid
         gridAutoFlow="column"
         justifyContent="start"
         gridGap="16px"
         mt="16px"
       >
-        {categories.map((category) => (
-          <Grid
-            key={category._id}
-            width="300px"
-            gridAutoFlow="column"
-            justifyContent="space-between"
-            alignItems="center"
-            border="1px solid #a0ddad"
-            borderBottomLeftRadius="16px"
-            borderTopRightRadius="16px"
-            bg="#a0ddad60"
-            p="16px"
-          >
-            <SImgAvatar
-              src="https://www.dairyfoods.com/ext/resources/DF/2020/August/df-100/GettyImages-1194287257.jpg?1597726305"
-              width={100}
-            />
-            <div>
-              <Text.Heading
-                width="150px"
+        {[{ name: "All", _id: "-1" }]
+          .concat(categories || [])
+          .map((category) => (
+            <Grid
+              key={category._id}
+              width="max-content"
+              gridAutoFlow="column"
+              justifyContent="space-between"
+              alignItems="center"
+              border="1px solid #a0ddad"
+              borderBottomLeftRadius="16px"
+              borderTopRightRadius="16px"
+              onClick={() => setCategoryId(category._id)}
+              bg={
+                (!selectedCategory && category._id) === "-1"
+                  ? "#a0ddad60"
+                  : selectedCategory && selectedCategory._id === category._id
+                  ? "#a0ddad60"
+                  : "white"
+              }
+              p="16px"
+            >
+              <Text.SmallHeading
                 whiteSpace="nowrap"
                 overflow="hidden"
                 textOverflow="ellipsis"
@@ -91,26 +100,20 @@ export default function Home() {
                 color="green"
               >
                 {category.name}
-              </Text.Heading>
-              <Text.Body mt="4px">{category.description}</Text.Body>
-            </div>
-            <BiChevronRight color="green" size={24} />
-          </Grid>
+              </Text.SmallHeading>
+            </Grid>
+          ))}
+      </Grid>
+      <Grid
+        gridAutoFlow="column"
+        justifyContent="start"
+        gridGap="16px"
+        mt="32px"
+      >
+        {products.map((product) => (
+          <ProductCard product={product} />
         ))}
       </Grid>
-      <Text.Heading fontWeight="bold" mt="24px">
-        Promotions
-        <Grid
-          gridAutoFlow="column"
-          justifyContent="start"
-          gridGap="16px"
-          mt="16px"
-        >
-          {products.map((product) => (
-            <ProductCard product={product} />
-          ))}
-        </Grid>
-      </Text.Heading>
     </SWrapper>
   );
-}
+};
