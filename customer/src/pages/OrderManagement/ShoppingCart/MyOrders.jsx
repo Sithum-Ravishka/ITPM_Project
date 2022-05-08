@@ -6,10 +6,28 @@ import { useContext } from "react";
 import { ShoppingDataContext } from "../../../context/shoppingDataContext/ShoppingDataContext";
 import { deleteShoppingData, getShoppingDatas } from "../../../context/shoppingDataContext/apiCalls";
 import { DeleteOutline } from "@material-ui/icons";
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 
 
 export default function MyOrders() {
   const { shoppingdatas, dispatch } = useContext(ShoppingDataContext);
+
+
+  
+const genPDF = () => {
+  const doc = new jsPDF({
+      orientation: "landscape",
+     
+    });
+  doc.setFontSize(20);
+  doc.text("Deliver Details", 10,10);
+
+  doc.autoTable({
+    html: '#content'
+  })
+  doc.save('Deliver Details.pdf');
+}  
 
   useEffect(() => {
     getShoppingDatas(dispatch);
@@ -59,13 +77,14 @@ export default function MyOrders() {
       field: "action",
       headerName: "Action",
       width: 200,
+
       renderCell: (params) => {
         return (
           <>
             <Link
               to={{
                 pathname: "/shoppingdata/" + params.row._id,
-                deliver: params.row,
+                shoppingdata: params.row,
               }}
             >
               <button className="dOrdersListAssign">Edit</button>
@@ -97,5 +116,6 @@ export default function MyOrders() {
         />
       </div>
     </div>
+    
   );
 }

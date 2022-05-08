@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../styles/cart.css";
 import remove from './1.png'
 
@@ -67,7 +68,9 @@ const Cart = ({ cart, setCart, handleChange }) => {
             <div><input type="radio" value="Card" name="option"/> Card </div>
             </div>
             <div className="btn">
+            <Link to="/shoppingcart" className="link">
               <button className="btn1"type="submit">Pay Now</button>
+            </Link>
             </div>
         </form> 
       </div>
