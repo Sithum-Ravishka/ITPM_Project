@@ -14,6 +14,7 @@ import DeliveryAssignList from "./pages/DeliverManagement/DeliveryAssignList/Del
 import DRegisterValidation from "./components/DeliverManagement/DValidation/DRegisterValidation";
 import EditAssignDelivery from "./pages/DeliverManagement/EditAssignDelivery/EditAssignDelivery";
 import Products from "./pages/product/products";
+import UserList from "./pages/UserManagement/UserList/UserList";
 
 function App() {
   return (
@@ -57,6 +58,9 @@ function App() {
         </Route>
         <Route path="/deliverassign/:deliverassignId">
           <EditAssignDelivery />
+        </Route>
+        <Route path="/userlist">
+          <UserList />
         </Route>
       </Switch>
     </Router>

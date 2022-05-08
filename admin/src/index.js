@@ -7,6 +7,7 @@ import { DeliverContextProvider } from './context/deliverContext/DeliverContext'
 import { AuthContextProvider } from './context/authContext/AuthContext';
 import { DeliverAssignContextProvider } from './context/deliverAssignContext/DeliverAssignContext';
 import { DeliveryUserContextProvider } from './context/deliveryUserContext/DeliveryUserContext';
+import { CustomerUserContextProvider } from './context/CustomerUsersContext/CustomerUserContext';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,7 +15,9 @@ ReactDOM.render(
       <DeliverContextProvider>
         <DeliverAssignContextProvider>
           <DeliveryUserContextProvider>
+            <CustomerUserContextProvider>
             <App />
+            </CustomerUserContextProvider>
           </DeliveryUserContextProvider>
         </DeliverAssignContextProvider>
       </DeliverContextProvider>
