@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import "./deliverAssign.scss";
 import profile from "./profile.jpg";
 import product from "./product.webp";
@@ -8,6 +8,7 @@ import axios from "axios";
 export default function DeliverAssign() {
   const location = useLocation();
   const deliver = location.deliver;
+  const history = useHistory();
 
   const [customerName, setCustomerName] = useState(deliver.customerName);
   const [address, setAddress] = useState(deliver.address);
@@ -60,6 +61,7 @@ export default function DeliverAssign() {
   const onSubmit = useCallback(
     async (e) => {
       e.preventDefault();
+      history.push("/delivery-assign-List");
       await axios.post("http://localhost:8800/api/deliverassigns", {
         customerName,
         address,

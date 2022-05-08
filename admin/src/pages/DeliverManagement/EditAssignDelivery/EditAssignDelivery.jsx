@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import "./editAssignDelivery.scss";
 import profile from "./profile.jpg";
 import product from "./product.webp";
@@ -8,6 +8,7 @@ import axios from "axios";
 export default function EditAssignDelivery() {
   const location = useLocation();
   const deliverassign = location.deliverassign;
+   const history = useHistory();
 
   const [customerName, setCustomerName] = useState(
     deliverassign ? deliverassign.customerName : ""
@@ -105,6 +106,7 @@ export default function EditAssignDelivery() {
   const onSubmit = useCallback(
     async (e) => {
       e.preventDefault();
+      history.push("/delivery-assign-List");
       if (deliverassign) {
         await axios.put(
           "http://localhost:8800/api/deliverassigns/" + deliverassign._id,

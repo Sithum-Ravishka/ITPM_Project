@@ -20,7 +20,7 @@ const ShoppingCart = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     createShoppingData(shoppingdata, dispatch);
-    navigate("/add-card-details");
+    navigate.push("/add-card-details");
   };
   return (
     

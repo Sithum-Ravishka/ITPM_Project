@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import storage from "../../../firebase";
 import { createDeliveryUser } from "../../../context/deliveryUserContext/apiCalls";
 import { DeliveryUserContext } from "../../../context/deliveryUserContext/DeliveryUserContext";
@@ -14,6 +14,8 @@ export default function DeliverRegister() {
   const [done, setDone] = useState(false);
   
   const { dispatch } = useContext(DeliveryUserContext);
+
+  const history = useHistory();
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -57,6 +59,7 @@ export default function DeliverRegister() {
   const handleSubmit = (e) => {
     e.preventDefault();
     createDeliveryUser(deliveryuser, dispatch);
+    history.push("/deliver-register");
     setDone(true);
     console.log(e.text);
   };
@@ -78,7 +81,7 @@ export default function DeliverRegister() {
             className="dRegisterImg"
           />
         </div>
-        <form>
+        <form >
           <div className="dRSectionRight">
             <span className="dRTitle">Register as a Delivery Agent</span>
             <span className="dRSubTitle">
@@ -282,7 +285,7 @@ export default function DeliverRegister() {
                 Reset
               </button>
               {uploaded === 2 ? (
-                <button className="dRCreate" onClick={handleSubmit}>
+                <button className="dRCreate" type="submit" onClick={handleSubmit}>
                   Create Deliver Account
                 </button>
               ) : (

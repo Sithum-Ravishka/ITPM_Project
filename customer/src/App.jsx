@@ -14,6 +14,7 @@ import UserRegister from "./pages/userManegment/UserRegister/UserRegister";
 import { Products } from "./pages/Products/Products";
 import Allcart from "./pages/OrderManagement/ShoppingCart/Allcart";
 import Edit from "./pages/OrderManagement/ShoppingCart/Edit";
+import DeliverProfile from "./pages/DeliverManagement/DeliverProfile/DeliverProfile";
 
 function App() {
   return (
@@ -46,7 +47,7 @@ function App() {
         <Route path="/Order-success">
           <OrderSuccess />
         </Route>
-        <Route path="/login">
+        <Route path="/deliver-login">
           <DeliverLogin />
         </Route>
         <Route path="/cart">
@@ -63,6 +64,9 @@ function App() {
         </Route>
         <Route path="/shoppingdata/:shoppingdataId">
           <Edit />
+        </Route>
+        <Route path="/deliver-profile">
+          <DeliverProfile />
         </Route>
       </Switch>
     </Router>
