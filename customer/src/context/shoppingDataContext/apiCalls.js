@@ -6,6 +6,11 @@ import {
   getShoppingDatasFailure,
   getShoppingDatasStart,
   getShoppingDatasSuccess,
+  deleteShoppingDataStart,
+  deleteShoppingDataSuccess,
+  deleteShoppingDataFailure,
+
+
 } from "./ShoppingDataActions";
 
 export const getShoppingDatas = async (dispatch) => {
@@ -37,4 +42,18 @@ export const createShoppingData = async (shoppingdata, dispatch) => {
   }
 };
 
+//delete
+export const deleteShoppingData = async (id, dispatch) => {
+  dispatch(deleteShoppingDataStart());
+  try {
+    await axios.delete("/shoppingdatas/" + id, {
+      headers: {
+        token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+      },
+    });
+    dispatch(deleteShoppingDataSuccess(id));
+  } catch (err) {
+    dispatch(deleteShoppingDataFailure());
+  }
+};
 

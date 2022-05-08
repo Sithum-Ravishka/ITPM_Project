@@ -33,4 +33,29 @@ router.get("/", verify, async (req, res) => {
   }
 }); 
 
+
+//DELETE
+router.delete("/:id", verify, async (req, res) => {
+  if (req.user.isAdmin) {
+    try {
+      await ShoppingData.findByIdAndDelete(req.params.id);
+      res.status(200).json("The movie has been deleted...");
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  } else {
+    res.status(403).json("You are not allowed!");
+  }
+});
+
+
+router.get("/find/:id", verify, async (req, res) => {
+  try {
+    const shoppingdata = await ShoppingData.findById(req.params.id);
+    res.status(200).json(shoppingdata);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

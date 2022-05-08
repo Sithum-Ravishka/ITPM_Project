@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { DeliverContext } from "../../../context/deliverContext/DeliverContext";
-import {  getDelivers } from "../../../context/deliverContext/apiCalls";
-
+import { getDelivers } from "../../../context/deliverContext/apiCalls";
 
 export default function DeliveryOrderList() {
   const { delivers, dispatch } = useContext(DeliverContext);
@@ -52,8 +51,12 @@ export default function DeliveryOrderList() {
       renderCell: (params) => {
         return (
           <>
-            <Link 
-              to={{ pathname: "/deliver/" + params.row._id, deliver: params.row }}>
+            <Link
+              to={{
+                pathname: "/deliver/" + params.row._id,
+                deliver: params.row,
+              }}
+            >
               <button className="dOrdersListAssign">Assign To Deliver</button>
             </Link>
           </>

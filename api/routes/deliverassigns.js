@@ -2,12 +2,11 @@ const router = require("express").Router();
 const DeliverAssign = require("../models/DeliverAssign");
 const verify = require("../verifyToken");
 
-
 //CREATE
 
 router.post("/", async (req, res) => {
   const deliverAssign = new DeliverAssign({
-    customerName : req.body.customerName,
+    customerName: req.body.customerName,
     address: req.body.address,
     zipCode: req.body.zipCode,
     mobile: req.body.mobile,
@@ -21,42 +20,40 @@ router.post("/", async (req, res) => {
     deliverNIC: req.body.deliverNIC,
     vechicleNo: req.body.vechicleNo,
     deliveryDate: req.body.deliveryDate,
-  })
-try{
+  });
+  try {
     await deliverAssign.save();
-  res.status(200).json(deliverAssign);
-} catch (err) {
-  res.status(500).json(err);
-}
+    res.status(200).json(deliverAssign);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 //Update
 
 router.put("/:id", async (req, res) => {
-
-  const deliverAssign = await DeliverAssign.findById(req.params.id)
+  const deliverAssign = await DeliverAssign.findById(req.params.id);
   deliverAssign.customerName = req.body.customerName;
   deliverAssign.address = req.body.address;
   deliverAssign.zipCode = req.body.zipCode;
-  deliverAssign.mobile= req.body.mobile;
-  deliverAssign.productName= req.body.productName;
-  deliverAssign.productImg= req.body.productImg;
-  deliverAssign.paymentMethod= req.body.paymentMethod;
-  deliverAssign.pricePerUnit= req.body.pricePerUnit;
-  deliverAssign.Quantity= req.body.Quantity;
-  deliverAssign.totalPrice= req.body.totalPrice;
-  deliverAssign.deliverName= req.body.deliverName;
-  deliverAssign.deliverNIC=req.body.deliverNIC;
-  deliverAssign.vechicleNo= req.body.vechicleNo;
-  deliverAssign.deliveryDate= req.body.deliveryDate;
-try{
+  deliverAssign.mobile = req.body.mobile;
+  deliverAssign.productName = req.body.productName;
+  deliverAssign.productImg = req.body.productImg;
+  deliverAssign.paymentMethod = req.body.paymentMethod;
+  deliverAssign.pricePerUnit = req.body.pricePerUnit;
+  deliverAssign.Quantity = req.body.Quantity;
+  deliverAssign.totalPrice = req.body.totalPrice;
+  deliverAssign.deliverName = req.body.deliverName;
+  deliverAssign.deliverNIC = req.body.deliverNIC;
+  deliverAssign.vechicleNo = req.body.vechicleNo;
+  deliverAssign.deliveryDate = req.body.deliveryDate;
+  try {
     await deliverAssign.save();
-  res.status(200).json(deliverAssign);
-} catch (err) {
-  res.status(500).json(err);
-}
+    res.status(200).json(deliverAssign);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
-
 
 router.post("/", verify, async (req, res) => {
   if (req.user.isAdmin) {
@@ -76,16 +73,16 @@ router.post("/", verify, async (req, res) => {
 
 router.get("/", verify, async (req, res) => {
   if (req.user.isAdmin) {
-      try {
-        const deliverassigns = await DeliverAssign.find();
-        res.status(200).json(deliverassigns.reverse());
-      } catch (err) {
-        res.status(500).json(err);
-      }
-    } else {
+    try {
+      const deliverassigns = await DeliverAssign.find();
+      res.status(200).json(deliverassigns.reverse());
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  } else {
     res.status(403).json("You are not allowed!");
   }
-}); 
+});
 
 //DELETE
 
@@ -121,12 +118,11 @@ router.get("/stats", async (req, res) => {
         },
       },
     ]);
-    res.status(200).json(data)
+    res.status(200).json(data);
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
 
 //GET ALL
 router.get("/litile", verify, async (req, res) => {

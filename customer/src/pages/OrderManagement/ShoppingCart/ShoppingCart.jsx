@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./ShoppinCart.scss";
 import { createShoppingData } from "../../../context/shoppingDataContext/apiCalls";
 import { ShoppingDataContext } from "../../../context/shoppingDataContext/ShoppingDataContext";
 const ShoppingCart = () => {
   
-  const navigate = useNavigate();
+  const navigate = useHistory();
 
   const [shoppingdata, setShoppingData] = useState(null);
 

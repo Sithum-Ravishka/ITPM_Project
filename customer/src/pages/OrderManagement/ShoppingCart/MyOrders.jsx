@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { ShoppingDataContext } from "../../../context/shoppingDataContext/ShoppingDataContext";
-import { getShoppingDatas } from "../../../context/shoppingDataContext/apiCalls";
+import { deleteShoppingData, getShoppingDatas } from "../../../context/shoppingDataContext/apiCalls";
+import { DeleteOutline } from "@material-ui/icons";
 
 
 export default function MyOrders() {
@@ -13,6 +14,10 @@ export default function MyOrders() {
   useEffect(() => {
     getShoppingDatas(dispatch);
   }, [dispatch]);
+
+  const handleDelete = (id) => {
+    deleteShoppingData(id, dispatch);
+  };
 
   const columns = [
     {
@@ -50,8 +55,30 @@ export default function MyOrders() {
       headerName: "Price",
       width: 150,
     },
+    {
+      field: "action",
+      headerName: "Action",
+      width: 200,
+      renderCell: (params) => {
+        return (
+          <>
+            <Link
+              to={{
+                pathname: "/shoppingdata/" + params.row._id,
+                deliver: params.row,
+              }}
+            >
+              <button className="dOrdersListAssign">Edit</button>
+            </Link>
+            <DeleteOutline
+              className="assignDelete"
+              onClick={() => handleDelete(params.row._id)}
+            />
+          </>
+        );
+      },
+    },
   ];
-
   return (
     <div className="MORDContainer">
       <div className="MORDHeader">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { Grid } from "../grid";
 import logo from "./logo.png";
@@ -37,7 +37,7 @@ const navItems = [
   },
   {
     name: "Cart",
-    link: "/cart",
+    link: "/all-cart",
   },
 
   {
@@ -47,7 +47,7 @@ const navItems = [
 ];
 
 export default function Topbar() {
-  const navigate = useNavigate();
+  const history = useHistory();
   const [activeMenu, setActiveMenu] = useState("Home");
   const location = useLocation();
 
@@ -74,7 +74,7 @@ export default function Topbar() {
             key={name}
             onClick={() => {
               setActiveMenu(name);
-              navigate(link);
+              history.push(link);
             }}
           >
             {name}

@@ -2,13 +2,10 @@ const router = require("express").Router();
 const DeliveryUser = require("../models/DeliveryUser");
 const verify = require("../verifyToken");
 
-
 //CREATE
-
 router.post("/", verify, async (req, res) => {
   if (req.user.isAdmin) {
     const newDeliveryUser = new DeliveryUser(req.body);
-
 
     try {
       const savedDeliveryUser = await newDeliveryUser.save();
@@ -20,8 +17,6 @@ router.post("/", verify, async (req, res) => {
     res.status(403).json("You are not allowed!");
   }
 });
-
-
 
 //GET ALL
 router.get("/", verify, async (req, res) => {

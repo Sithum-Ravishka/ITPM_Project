@@ -23,4 +23,20 @@ export const getShoppingDatasStart = () => ({
   export const createShoppingDataFailure = () => ({
     type: "CREATE_SHOPPINGDATAS_FAILURE",
   });
+
+
+  
+  export const deleteShoppingDataStart = () => ({
+    type: "DELETE_SHOPPINGDATA_START",
+  });
+  
+  export const deleteShoppingDataSuccess = (id) => ({
+    type: "DELETE_SHOPPINGDATA_SUCCESS",
+    payload: id,
+  });
+  
+  export const deleteShoppingDataFailure = () => ({
+    type: "DELETE_SHOPPINGDATA_FAILURE",
+  });
+  
   
