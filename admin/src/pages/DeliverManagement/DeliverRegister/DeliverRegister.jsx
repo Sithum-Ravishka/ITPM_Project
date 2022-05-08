@@ -12,7 +12,7 @@ export default function DeliverRegister() {
   const [deliverPhoto, setdeliverPhoto] = useState(null);
   const [uploaded, setUploaded] = useState(0);
   const [done, setDone] = useState(false);
-  
+
   const { dispatch } = useContext(DeliveryUserContext);
 
   const history = useHistory();
@@ -64,7 +64,6 @@ export default function DeliverRegister() {
     console.log(e.text);
   };
 
-
   return (
     <div className="dRContainer">
       <div className="dRHeader">
@@ -81,7 +80,7 @@ export default function DeliverRegister() {
             className="dRegisterImg"
           />
         </div>
-        <form >
+        <form>
           <div className="dRSectionRight">
             <span className="dRTitle">Register as a Delivery Agent</span>
             <span className="dRSubTitle">
@@ -285,7 +284,11 @@ export default function DeliverRegister() {
                 Reset
               </button>
               {uploaded === 2 ? (
-                <button className="dRCreate" type="submit" onClick={handleSubmit}>
+                <button
+                  className="dRCreate"
+                  type="submit"
+                  onClick={handleSubmit}
+                >
                   Create Deliver Account
                 </button>
               ) : (

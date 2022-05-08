@@ -1,4 +1,4 @@
-.dordersContainer{
+.dordersContainer {
     width: 1260px;
     height: 100%;
     min-height: 680px;
@@ -7,14 +7,14 @@
     border-radius: 0px 0px 20px 20px;
     padding-bottom: 20px;
 
-    .dRHeader{
+    .dRHeader {
         margin-top: -60px;
 
-        .link{
+        .link {
             text-decoration: none;
         }
-        
-        .dRMTitle{
+
+        .dRMTitle {
             font-size: 28px;
             color: rgb(15, 0, 102);
             margin-top: 15px;
@@ -24,7 +24,7 @@
         }
     }
 
-    .dOrdersListAssign{
+    .dOrdersListAssign {
         border-style: double;
         border-color: rgb(218, 218, 218);
         border-radius: 10px;
@@ -35,7 +35,7 @@
         margin-right: 20px;
     }
 
-    .dOrdersList{
+    .dOrdersList {
         width: 1220px;
         height: 650px;
         margin-left: 20px;
@@ -43,5 +43,3 @@
         background-color: rgb(255, 255, 255);
     }
 }
-
-

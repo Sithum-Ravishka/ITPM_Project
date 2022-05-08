@@ -1,14 +1,13 @@
-import React, { useEffect, useMemo, useState } from 'react'
-import DAssignOrders from '../../../components/DeliverManagement/DAssignOrders/DAssignOrders';
-import DChart from '../../../components/DeliverManagement/DChart/DChart';
-import DeliverSignUp from '../../../components/DeliverManagement/DeliverSignUp/DeliverSignUp';
-import DeliveryOrders from '../../../components/DeliverManagement/DeliveryOrders/DeliveryOrders';
-import DeliveryUsers from '../../../components/DeliverManagement/DeliveryUsers/DeliveryUsers';
+import React, { useEffect, useMemo, useState } from "react";
+import DAssignOrders from "../../../components/DeliverManagement/DAssignOrders/DAssignOrders";
+import DChart from "../../../components/DeliverManagement/DChart/DChart";
+import DeliverSignUp from "../../../components/DeliverManagement/DeliverSignUp/DeliverSignUp";
+import DeliveryOrders from "../../../components/DeliverManagement/DeliveryOrders/DeliveryOrders";
+import DeliveryUsers from "../../../components/DeliverManagement/DeliveryUsers/DeliveryUsers";
 import axios from "axios";
-import './deliverHome.scss';
+import "./deliverHome.scss";
 
 export default function DeliverHome() {
-
   const MONTHS = useMemo(
     () => [
       "Jan",
@@ -54,26 +53,28 @@ export default function DeliverHome() {
     getStats();
   }, [MONTHS]);
 
-
   return (
     <div className="DContainer">
-      <div className='header'>
-          <span className='title'>Welcome, <span className='subtitle'>Admin</span></span>
+      <div className="header">
+        <span className="title">
+          Welcome, <span className="subtitle">Admin</span>
+        </span>
       </div>
-      <DChart data={assignStats}  title="Delivery Analytics" grid dataKey="Delivery Orders" />
+      <DChart
+        data={assignStats}
+        title="Delivery Analytics"
+        grid
+        dataKey="Delivery Orders"
+      />
 
-
-
-
-      <div className='smLists'>
-        <DeliveryUsers/>
-        <DeliveryOrders/>
-        <DAssignOrders/>
+      <div className="smLists">
+        <DeliveryUsers />
+        <DeliveryOrders />
+        <DAssignOrders />
       </div>
-      <div className='dRegSignUph'>
-        <DeliverSignUp/>
+      <div className="dRegSignUph">
+        <DeliverSignUp />
       </div>
-    
     </div>
-  )
+  );
 }

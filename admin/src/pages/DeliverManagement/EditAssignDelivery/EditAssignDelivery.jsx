@@ -8,7 +8,7 @@ import axios from "axios";
 export default function EditAssignDelivery() {
   const location = useLocation();
   const deliverassign = location.deliverassign;
-   const history = useHistory();
+  const history = useHistory();
 
   const [customerName, setCustomerName] = useState(
     deliverassign ? deliverassign.customerName : ""

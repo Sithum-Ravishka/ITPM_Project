@@ -1,4 +1,4 @@
-.DContainer{
+.DContainer {
     width: 1260px;
     height: 100%;
     min-height: 660px;
@@ -7,17 +7,17 @@
     border-radius: 0px 0px 20px 20px;
     padding-bottom: 5px;
 
-    .header{
+    .header {
         margin-top: -60px;
-        
-        .title{
+
+        .title {
             font-size: 28px;
             color: black;
             margin-top: 15px;
             font-weight: 600;
             margin-left: 40px;
 
-            .subtitle{
+            .subtitle {
                 font-size: 30px;
                 font-weight: bold;
                 color: rgb(37, 0, 122);
@@ -25,12 +25,12 @@
         }
     }
 
-    .smLists{
+    .smLists {
         display: flex;
         flex-direction: row;
     }
 
-    .dRegSignUph{
+    .dRegSignUph {
         margin-left: 270px;
     }
 }

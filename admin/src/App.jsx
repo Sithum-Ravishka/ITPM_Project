@@ -64,7 +64,7 @@ function App() {
           <UserList />
         </Route>
         <Route path="/customeruser/:customeruserId">
-          <UserEditeDetails/>
+          <UserEditeDetails />
         </Route>
       </Switch>
     </Router>
