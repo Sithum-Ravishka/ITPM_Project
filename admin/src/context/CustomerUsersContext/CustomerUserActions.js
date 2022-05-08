@@ -23,3 +23,16 @@ export const getCustomerUsersStart = () => ({
   export const createCustomerUserFailure = () => ({
     type: "CREATE_CUSTOMERUSER_FAILURE",
   });
+
+  export const deleteCustomerUsersStart = () => ({
+    type: "DELETE_CUSTOMERUSER_START",
+  });
+  
+  export const deleteCustomerUsersSuccess = (id) => ({
+    type: "DELETE_CUSTOMERUSER_SUCCESS",
+    payload: id,
+  });
+  
+  export const deleteCustomerUsersFailure = () => ({
+    type: "DELETE_CUSTOMERUSER_FAILURE",
+  });

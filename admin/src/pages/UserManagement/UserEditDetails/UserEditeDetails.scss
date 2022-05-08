@@ -1,0 +1,171 @@
+.ULContainer {
+  width: 1260px;
+    height: 100%;
+    min-height: 680px;
+    background-color: rgb(255, 255, 255);
+    margin-left: 250px;
+    border-radius: 0px 0px 20px 20px;
+    padding-top: -20px;
+  .ulTitle {
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 250px;
+    margin-top: 10px;
+    padding: 20px;
+    font-size: 50px;
+    font-family: "Times New Roman";
+  }
+
+  .UrContent {
+    width: 1260px;
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    background-color: white;
+    margin-top: 50px;
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+
+    .UrInputTitel {
+      font-size: 18px;
+      font-weight: bold;
+      .Star {
+        color: red;
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: 5px;
+      }
+    }
+
+    .UrInput {
+      width: 200px;
+      height: 40px;
+      padding: 5px 15px;
+      background-color: white;
+      color: gray;
+      font-size: 16px;
+      box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+      border-style: double;
+      margin-right: 50px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .UkInput {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .UrRedio {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: 10px;
+      font-size: 16px;
+    }
+
+    .UrSection1 {
+      margin-left: 30px;
+      display: flex;
+      flex-direction: column;
+       margin-top: 20px;
+    }
+    .UrSection2 {
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+
+      .RSection2 {
+        margin-top: 23px;
+      }
+    }
+
+    .UrIntoBox {
+      display: flex;
+      flex-direction: column;
+      .UrIntoBox2 {
+        display: flex;
+        flex-direction: row;
+        .UrSection3 {
+          display: flex;
+          flex-direction: column;
+          margin-top: 25px;
+        }
+        .UrSection4 {
+          display: flex;
+          flex-direction: column;
+          margin-top: 20px;
+          .PC {
+            margin-top: 23px;
+          }
+        }
+      }
+      .UrSection5 {
+        display: flex;
+        flex-direction: column;
+        .UrButton {
+          display: flex;
+          flex-direction: row;
+
+          Button {
+            margin-left: 100px;
+            cursor: pointer;
+          }
+        }
+      }
+      .UrButton {
+        margin-top: 20px;
+        font-family: "Georgia";
+        font-size: 24px;
+        color: white;
+        width: 350px;
+        height: 40px;
+        padding: 5px 15px;
+        margin-left: 90px;
+        cursor: pointer;
+
+        .UrButton3 {
+          margin-top: 30px;
+          font-family: "Georgia";
+          font-size: 24px;
+          color: white;
+          background-color: rgb(0, 153, 13);
+          width: 350px;
+          height: 60px;
+          padding: 5px 15px;
+          margin-left: 50px;
+          cursor: pointer;
+        }
+
+        .UrButton2 {
+          margin-top: 30px;
+          font-family: "Georgia";
+          font-size: 24px;
+          color: white;
+          background-color: rgb(0, 153, 13);
+          width: 350px;
+          height: 40px;
+          padding: 5px 15px;
+          margin-left: 200px;
+          cursor: pointer;
+        }
+      }
+      .UrLogin {
+        margin-top: 60px;
+      }
+
+      .Up {
+        font-family: "Georgia";
+        font-size: 24px;
+        margin-left: 190px;
+        margin-top: 30px;
+      }
+
+      .UpS {
+        font-family: "Georgia";
+        font-size: 26px;
+        color: #1006a5;
+        background-color: inherit;
+        cursor: pointer;
+      }
+    }
+  }
+}
