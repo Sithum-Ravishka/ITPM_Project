@@ -6,6 +6,29 @@ import { Table } from "../../components/table";
 import "../DeliverManagement/DeliveryOrderList/deliveryOrderList.scss";
 import { ProductsForm } from "./products-form";
 
+import * as FileSaver from "file-saver";
+import * as XLSX from "xlsx";
+
+export const ExportToExcel = ({ apiData, fileName }) => {
+  const fileType =
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8";
+  const fileExtension = ".xlsx";
+
+  const exportToCSV = (apiData, fileName) => {
+    const ws = XLSX.utils.json_to_sheet(apiData);
+    const wb = { Sheets: { data: ws }, SheetNames: ["data"] };
+    const excelBuffer = XLSX.write(wb, { bookType: "xlsx", type: "array" });
+    const data = new Blob([excelBuffer], { type: fileType });
+    FileSaver.saveAs(data, fileName + fileExtension);
+  };
+
+  return (
+    <Button onClick={(e) => exportToCSV(apiData, fileName)}>
+      Download report
+    </Button>
+  );
+};
+
 const getProducts = async () => {
   return await axios.get("http://localhost:8800/api/products");
 };
@@ -37,9 +60,12 @@ export default function Products() {
         <h1 style={{ margin: 0, color: "#0f0066" }} className="dRMTitle">
           Products
         </h1>
-        <Button mt="16px" onClick={() => setProduct(undefined)} ml="24px">
-          Add product
-        </Button>
+        <Grid gridAutoFlow="column" alignItems="center" justifyContent="start">
+          <Button onClick={() => setProduct(undefined)} mr="24px">
+            Add product
+          </Button>
+          <ExportToExcel apiData={products} fileName={"report"} />
+        </Grid>
       </Grid>
 
       <Grid p="16px" mt="16px" gridAutoFlow="column">
