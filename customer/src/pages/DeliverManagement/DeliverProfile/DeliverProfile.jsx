@@ -5,10 +5,7 @@ import "./deliverProfile.scss";
 export default function DeliverProfile() {
   return (
     <div className="DLContainer">
-      <div className="UIContent">
-    
-
-      </div>
+      <div className="UIContent"></div>
     </div>
   );
 }

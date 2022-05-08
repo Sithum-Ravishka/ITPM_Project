@@ -5,29 +5,27 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import { DeleteOutline } from "@material-ui/icons";
 import { DeliverAssignContext } from "../../../context/deliverAssignContext/DeliverAssignContext";
-import { deleteDeliverAssign, getDeliverAssings } from "../../../context/deliverAssignContext/apiCalls";
+import {
+  deleteDeliverAssign,
+  getDeliverAssings,
+} from "../../../context/deliverAssignContext/apiCalls";
 
-import jsPDF from 'jspdf';
-import 'jspdf-autotable';
-
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 
 export default function DeliveryOrderList() {
   const { deliverassigns, dispatch } = useContext(DeliverAssignContext);
 
-
-  
-  function report(){
-    const doc = new jsPDF()
-    doc.text("Assign Delivery List Details", 20, 10)
+  function report() {
+    const doc = new jsPDF();
+    doc.text("Assign Delivery List Details", 20, 10);
     doc.autoTable({
       theme: "grid",
-      columns: columns.map(col => ({ ...col, dataKey: col.field })),
-      body: deliverassigns
-    })
-    doc.save('Furniture List.pdf')
-}
-
-
+      columns: columns.map((col) => ({ ...col, dataKey: col.field })),
+      body: deliverassigns,
+    });
+    doc.save("Assign Delivery List.pdf");
+  }
 
   useEffect(() => {
     getDeliverAssings(dispatch);
@@ -82,7 +80,6 @@ export default function DeliveryOrderList() {
               }}
             >
               <button className="dOrdersListAssign">Edit Assign Deliver</button>
-              <button type="button" class="btn btn-secondary btn-sm" onClick={report} >Generate Report</button>
             </Link>
             <DeleteOutline
               className="assignDelete"
@@ -100,6 +97,10 @@ export default function DeliveryOrderList() {
         <Link to="/delivery-order-list" className="link">
           <span className="dRMTitle">Assign Order List for Deliver</span>
         </Link>
+
+        <button type="button" class="reportBtn" onClick={report}>
+          Generate Report
+        </button>
       </div>
 
       <div className="dOrdersList">
