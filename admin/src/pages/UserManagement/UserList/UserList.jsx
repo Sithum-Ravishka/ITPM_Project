@@ -133,7 +133,7 @@ export default function UserList() {
         <Link to="/delivery-order-list" className="link">
           <span className="dRMTitle">Details For Customers</span>
         </Link>
-        <button type="button" class="btn btn-secondary btn-sm" onClick={report} >Generate Report</button>
+        <button type="button" className="reportBtn1" onClick={report} >Generate Report</button>
       </div>
 
       <div className="dOrdersList">

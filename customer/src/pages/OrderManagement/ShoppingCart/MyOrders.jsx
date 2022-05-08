@@ -6,29 +6,24 @@ import { useContext } from "react";
 import { ShoppingDataContext } from "../../../context/shoppingDataContext/ShoppingDataContext";
 import { deleteShoppingData, getShoppingDatas } from "../../../context/shoppingDataContext/apiCalls";
 import { DeleteOutline } from "@material-ui/icons";
-import jsPDF from 'jspdf';
-import 'jspdf-autotable';
 
+import jsPDF from "jspdf";
+import "jspdf-autotable";
 
 export default function MyOrders() {
   const { shoppingdatas, dispatch } = useContext(ShoppingDataContext);
 
-
-  
-const genPDF = () => {
-  const doc = new jsPDF({
-      orientation: "landscape",
-     
+  function report() {
+    const doc = new jsPDF();
+    doc.text("Order Summry Details", 20, 10);
+    doc.autoTable({
+      theme: "grid",
+      columns: columns.map((col) => ({ ...col, dataKey: col.field })),
+      body: shoppingdatas,
     });
-  doc.setFontSize(20);
-  doc.text("Deliver Details", 10,10);
-
-  doc.autoTable({
-    html: '#content'
-  })
-  doc.save('Deliver Details.pdf');
-}  
-
+    doc.save("Order Summry.pdf");
+  }
+  
   useEffect(() => {
     getShoppingDatas(dispatch);
   }, [dispatch]);
@@ -104,6 +99,9 @@ const genPDF = () => {
         <Link to="/delivery-order-list" className="link">
           <span className="MORDTitle">Order Summary Report</span>
         </Link>
+        <button type="button" className="reportBtn" onClick={report}>
+          Generate Report
+        </button>
       </div>
 
       <div className="dOrdersList">

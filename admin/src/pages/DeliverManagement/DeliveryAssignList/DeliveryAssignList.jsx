@@ -98,7 +98,7 @@ export default function DeliveryOrderList() {
           <span className="dRMTitle">Assign Order List for Deliver</span>
         </Link>
 
-        <button type="button" class="reportBtn" onClick={report}>
+        <button type="button" className="reportBtn" onClick={report}>
           Generate Report
         </button>
       </div>
